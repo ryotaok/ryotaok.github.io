@@ -1,0 +1,6 @@
+[book]
+authors = ["ryota"]
+language = "en"
+multilingual = false
+src = "src"
+title = "DOS Simulation Reports"
