@@ -38,3 +38,4 @@ Other implementation limitations:
 - Shields are always active.
 - When characters use Staff of Homa, their HP is below 50%.
 - Amos' Bow travels the maximum distance.
+- Elemental resonance is not implemented.
