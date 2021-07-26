@@ -1,20 +1,20 @@
 # Traveler (Anemo)
 
-Traveler (Anemo) is the **22th** position out of 38 characters. See [Simulation Settings](./simulation_settings.md) for more information.
+Traveler (Anemo) is the **34th** position out of 42 characters. See
+[Simulation Settings](./simulation_settings.md) for more information.
 
-## Alternative weapons and artifacts
+The following tables show relative strength of the available weapons and
+artifacts. The columns of "5s", "10s" and "20s" are obtained by
+simulating average damage of the weapons and artifacts at a particular
+moment.
 
-The maximum strength of weapons:
+## Weapons
 
-{{#include tables/Traveler_(Anemo)_1.html}}
+{{#include tables/Traveler_(Anemo)_weapon.html}}
 
-The average strength of artifacts for each weapon:
+## Artifacts
 
 {{#include tables/Traveler_(Anemo)_artifact.html}}
-
-## With 1 supporter
-
-{{#include tables/Traveler_(Anemo)_2.html}}
 
 # Credit
 

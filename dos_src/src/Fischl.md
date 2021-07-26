@@ -1,20 +1,20 @@
 # Fischl
 
-Fischl is the **18th** position out of 38 characters. See [Simulation Settings](./simulation_settings.md) for more information.
+Fischl is the **17th** position out of 42 characters. See
+[Simulation Settings](./simulation_settings.md) for more information.
 
-## Alternative weapons and artifacts
+The following tables show relative strength of the available weapons and
+artifacts. The columns of "5s", "10s" and "20s" are obtained by
+simulating average damage of the weapons and artifacts at a particular
+moment.
 
-The maximum strength of weapons:
+## Weapons
 
-{{#include tables/Fischl_1.html}}
+{{#include tables/Fischl_weapon.html}}
 
-The average strength of artifacts for each weapon:
+## Artifacts
 
 {{#include tables/Fischl_artifact.html}}
-
-## With 1 supporter
-
-{{#include tables/Fischl_2.html}}
 
 # Credit
 

@@ -1,20 +1,20 @@
 # Yanfei
 
-Yanfei is the **17th** position out of 38 characters. See [Simulation Settings](./simulation_settings.md) for more information.
+Yanfei is the **8th** position out of 42 characters. See
+[Simulation Settings](./simulation_settings.md) for more information.
 
-## Alternative weapons and artifacts
+The following tables show relative strength of the available weapons and
+artifacts. The columns of "5s", "10s" and "20s" are obtained by
+simulating average damage of the weapons and artifacts at a particular
+moment.
 
-The maximum strength of weapons:
+## Weapons
 
-{{#include tables/Yanfei_1.html}}
+{{#include tables/Yanfei_weapon.html}}
 
-The average strength of artifacts for each weapon:
+## Artifacts
 
 {{#include tables/Yanfei_artifact.html}}
-
-## With 1 supporter
-
-{{#include tables/Yanfei_2.html}}
 
 # Credit
 

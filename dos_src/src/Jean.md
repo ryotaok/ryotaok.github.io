@@ -1,20 +1,20 @@
 # Jean
 
-Jean is the **15th** position out of 38 characters. See [Simulation Settings](./simulation_settings.md) for more information.
+Jean is the **27th** position out of 42 characters. See
+[Simulation Settings](./simulation_settings.md) for more information.
 
-## Alternative weapons and artifacts
+The following tables show relative strength of the available weapons and
+artifacts. The columns of "5s", "10s" and "20s" are obtained by
+simulating average damage of the weapons and artifacts at a particular
+moment.
 
-The maximum strength of weapons:
+## Weapons
 
-{{#include tables/Jean_1.html}}
+{{#include tables/Jean_weapon.html}}
 
-The average strength of artifacts for each weapon:
+## Artifacts
 
 {{#include tables/Jean_artifact.html}}
-
-## With 1 supporter
-
-{{#include tables/Jean_2.html}}
 
 # Credit
 

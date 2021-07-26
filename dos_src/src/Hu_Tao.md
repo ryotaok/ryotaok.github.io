@@ -1,20 +1,20 @@
 # Hu Tao
 
-Hu Tao is the **2nd** position out of 38 characters. See [Simulation Settings](./simulation_settings.md) for more information.
+Hu Tao is the **1st** position out of 42 characters. See
+[Simulation Settings](./simulation_settings.md) for more information.
 
-## Alternative weapons and artifacts
+The following tables show relative strength of the available weapons and
+artifacts. The columns of "5s", "10s" and "20s" are obtained by
+simulating average damage of the weapons and artifacts at a particular
+moment.
 
-The maximum strength of weapons:
+## Weapons
 
-{{#include tables/Hu_Tao_1.html}}
+{{#include tables/Hu_Tao_weapon.html}}
 
-The average strength of artifacts for each weapon:
+## Artifacts
 
 {{#include tables/Hu_Tao_artifact.html}}
-
-## With 1 supporter
-
-{{#include tables/Hu_Tao_2.html}}
 
 # Credit
 
