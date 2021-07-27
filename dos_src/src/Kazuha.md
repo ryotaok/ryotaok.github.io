@@ -1,6 +1,6 @@
 # Kazuha
 
-Kazuha is the **20th** position out of 42 characters. See
+Kazuha is the **19th** position out of 42 characters. See
 [Simulation Settings](./simulation_settings.md) for more information.
 
 The following tables show relative strength of the available weapons and

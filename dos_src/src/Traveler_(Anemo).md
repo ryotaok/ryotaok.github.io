@@ -1,6 +1,6 @@
 # Traveler (Anemo)
 
-Traveler (Anemo) is the **34th** position out of 42 characters. See
+Traveler (Anemo) is the **33th** position out of 42 characters. See
 [Simulation Settings](./simulation_settings.md) for more information.
 
 The following tables show relative strength of the available weapons and

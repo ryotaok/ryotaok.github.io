@@ -1,6 +1,6 @@
 # Fischl
 
-Fischl is the **17th** position out of 42 characters. See
+Fischl is the **16th** position out of 42 characters. See
 [Simulation Settings](./simulation_settings.md) for more information.
 
 The following tables show relative strength of the available weapons and

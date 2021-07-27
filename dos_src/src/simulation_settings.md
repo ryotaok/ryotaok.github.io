@@ -24,7 +24,7 @@ Artifacts:
 
 Damage calculation:
 
-- Most in-game features are implemented (see the Limitations below): enemy resistance, enemy defense, elemental reactions, internal cooldown of elemental application, the gauge unit theory,
+- Most in-game features are implemented: enemy resistance, enemy defense, elemental reactions, internal cooldown of elemental application, the gauge unit theory, stamina,
 - Critical damage is the average value of Crit rate and Crit damage.
 - Randomness of passive effects is always 100% (for example, Prototype Archaic has 50% chance to activate its passive but it is always activated when its condition is met).
 
@@ -43,4 +43,60 @@ Other implementation limitations:
 - Amos' Bow travels the maximum distance.
 - Elemental resonance is not implemented.
 - The results of the future characters are not accurate.
-- Healing bonus is not implemented.
+- Healing bonus is not implemented (most healing related features are not implemented yet).
+- Geo Construct.
+- Plunge attacks are considered as charge attacks without stamina consumption for now.
+- I will investigate stamina recovery and consumption.
+
+## Progress of implementations
+
+Each blank cell means that the respective feature is correct. Although most charge attacks are not implemented, the cells are left blank.
+
+Characters:
+
+For Anemo characters, I think elemental absorption works correctly.
+
+| Name               | Normal attack       | Charge attack                        | Press skill                                    | Hold Skill                  | Burst                                        | Other passives (and alternate sprint)                 |
+| --                 | --                  | --                                   | --                                             | --                          | --                                           | --                                                    |
+| Raiden Shogun      | WIP                 |                                      | The skill should stack up to 2?                |                             | Starting 40 resolve stacks and Incomplete    |                                                       |
+| Sangonomiya Kokomi | WIP                 |                                      | Ripple DMG should be correct but incomplete    |                             | DMG bonuses should be correct but incomplete |                                                       |
+| KujouSara          | WIP                 |                                      | Incomplete                                     |                             | Incomplete                                   |                                                       |
+| Aloy               | WIP                 |                                      | May be incorrect                               |                             |                                              |                                                       |
+| Ayaka              |                     |                                      |                                                |                             | 15 hits in total                             | A4 bonus and infusion are always active               |
+| Yoimiya            | WIP                 |                                      | Improves NA multipliers by 161.74%             |                             | Aurous Blaze triggers every 2 seconds        |                                                       |
+| Sayu               | WIP                 |                                      | Incomplete                                     |                             | Incomplete                                   |                                                       |
+| Kazuha             |                     |                                      |                                                |                             |                                              | A4 improves DMG bonuses of all elements               |
+| Yanfei             |                     | Used if at least 3 Scarlet Seals     |                                                |                             |                                              | CA always triggers A4                                 |
+| Eula               |                     |                                      |                                                | Used if 2 Grimhearts        |                                              | A4 does not reset CD of skills                        |
+| Rosaria            |                     |                                      |                                                |                             |                                              | A1 bonus applies on cast                              |
+| Xiao               | WIP                 | WIP                                  | Generate particles even if burst is on?        |                             |                                              | A4 is not implemented                                 |
+| HuTao              |                     | Stamina consumption may be incorrect | Blood Blossom applies on cast                  |                             |                                              | A4 bonus is always active                             |
+| Albedo             |                     |                                      |                                                |                             | 3 DoT hits                                   | A1 is not implemented because of infinite HP          |
+| Ganyu              |                     | Always used                          |                                                |                             |                                              | A4 applies to all characters                          |
+| Tartaglia          | Always Melee Stance |                                      | Incomplete                                     |                             |                                              | Master of Weaponry increases all NA multipliers by 5% |
+| Diona              |                     |                                      |                                                |                             | Incomplete                                   | Both A1 and A4 are not implemented                    |
+| Zhongli            |                     |                                      |                                                | Never used                  |                                              | Both A1 and A4 are not implemented                    |
+| Xinyan             |                     |                                      | On hit, the shield level 3 is always activated |                             |                                              | A4 applies to all characters                          |
+| Amber              |                     | Always used                          | The puppet explodes immediately                | Never used                  | 18 hits                                      | A4 is active without the weakpoint                    |
+| Bennett            |                     |                                      |                                                | Never used                  |                                              | TODO A4                                               |
+| Xiangling          |                     |                                      |                                                |                             |                                              | A4 applies to the first member                        |
+| Diluc              |                     | Never used                           | 1 charge to 3 hits (WIP)                       |                             | 3 DoT hits                                   |                                                       |
+| Klee               |                     | Incomplete                           | Mines hit 4 times                              |                             | 24 hits in total                             | Both A1 and A4 are incomplete                         |
+| Barbara            |                     |                                      | Not implemented                                |                             | Not implemented                              | Both A1 and A4 are not implemented                    |
+| Mona               |                     |                                      |                                                |                             | May not be complete                          | A1 is not implemented                                 |
+| Xingqiu            |                     |                                      | Incomplete                                     |                             | Triggers every 1.233 seconds                 | A1 is not implemented                                 |
+| Beidou             |                     |                                      | Incomplete                                     |                             | Targets only one enemy                       | May not be complete                                   |
+| Fischl             |                     |                                      | Generate a particle for every attack           |                             | Reset CD of the skill                        | A4 may not be correct                                 |
+| Keqing             |                     |                                      |                                                | Never used                  |                                              |                                                       |
+| Lisa               |                     |                                      |                                                | Used if 3 Conductive Status | 28 hits                                      |                                                       |
+| Razor              |                     |                                      | Generate particles even if burst is on?        |                             | Reset CD (WIP)                               |                                                       |
+| Chongyun           |                     |                                      | Infuse the respective vision to each character |                             |                                              | A1 applies to all characters                          |
+| Kaeya              |                     |                                      |                                                |                             | 12 hits in total                             | A1 does not heal                                      |
+| Qiqi               |                     |                                      | Incomplete                                     |                             | Incomplete                                   | Incomplete                                            |
+| Jean               |                     |                                      | Fall damages do not happen                     |                             | Incomplete                                   | Incomplete                                            |
+| Sucrose            |                     |                                      |                                                |                             |                                              | A1 may be incorrect                                   |
+| Traveler (Anemo)   |                     |                                      |                                                |                             | Always lift an enemy                         | A4 does not heal                                      |
+| Venti              | WIP                 |                                      |                                                |                             | 8 hits in total                              | A4 may be incorrect                                   |
+| Ningguang          |                     | Used if at least 1 Star Jade         | Jade Screen should be correct                  |                             |                                              |                                                       |
+| Noelle             |                     | Never used                           | Incomplete                                     |                             |                                              | A1 is incomplete                                      |
+| Traveler (Geo)     |                     |                                      |                                                |                             |                                              |                                                       |

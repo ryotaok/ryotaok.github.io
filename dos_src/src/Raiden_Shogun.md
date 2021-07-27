@@ -1,6 +1,6 @@
 # Raiden Shogun
 
-Raiden Shogun is the **23th** position out of 42 characters. See
+Raiden Shogun is the **22th** position out of 42 characters. See
 [Simulation Settings](./simulation_settings.md) for more information.
 
 The following tables show relative strength of the available weapons and

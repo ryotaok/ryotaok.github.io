@@ -1,6 +1,6 @@
 # Yoimiya
 
-Yoimiya is the **6th** position out of 42 characters. See
+Yoimiya is the **3rd** position out of 42 characters. See
 [Simulation Settings](./simulation_settings.md) for more information.
 
 The following tables show relative strength of the available weapons and

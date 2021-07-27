@@ -1,6 +1,6 @@
 # Noelle
 
-Noelle is the **31th** position out of 42 characters. See
+Noelle is the **30th** position out of 42 characters. See
 [Simulation Settings](./simulation_settings.md) for more information.
 
 The following tables show relative strength of the available weapons and
