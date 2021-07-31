@@ -5,6 +5,7 @@
 - [Raiden Shogun](./Raiden_Shogun.md)
 - [Kujou Sara](./Kujou_Sara.md)
 - [Sangonomiya Kokomi](./Sangonomiya_Kokomi.md)
+- [Kokomi (HP scale)](./Kokomi_(HP_scale).md)
 - [Aloy](./Aloy.md)
 
 - [Ayaka](./Ayaka.md)

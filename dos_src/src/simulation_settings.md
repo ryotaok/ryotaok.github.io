@@ -32,7 +32,7 @@ The simulated field:
 
 - The enemy is a hilichurl at level 90.
 - Simulated characters try to take actions every 200 milliseconds and the simulation ends when the simulation timer is at 20 seconds (these values can be changed). If the actions are under cooldown, the characters will do nothing.
-- The first character has an attacker role, where the elemental burst, the elemental skill, and the normal or charge attack are taken. While the rest of the characters, if exists, have supporter role, where only the bursts and the skills are taken.
+- The first character has an attacker role, where the elemental burst, the elemental skill, and the normal or charge attack can be used. While the rest of the characters, if exists, have supporter role, where only the bursts and the skills can be used.
 - Characters recharge all the their energy at the begging, and 15 energy are given when the timer is at 5 seconds.
 
 Other implementation limitations:

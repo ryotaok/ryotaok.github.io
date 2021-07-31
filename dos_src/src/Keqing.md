@@ -1,20 +1,35 @@
 # Keqing
 
-Keqing is the **12th** position out of 42 characters. See
-[Simulation Settings](./simulation_settings.md) for more information.
+Keqing is the **14th** position on average out of 43
+characters when full energy is given at the beginning, and is the
+**12th** position on average when 20 energy is given at the
+beginning. See [Simulation Settings](./simulation_settings.md) for more
+information.
 
 The following tables show relative strength of the available weapons and
 artifacts. The columns of "5s", "10s" and "20s" are obtained by
-simulating average damage of the weapons and artifacts at a particular
+simulating max damage of the weapons and artifacts at a particular
 moment.
 
 ## Weapons
 
-{{#include tables/Keqing_weapon.html}}
+When full energy is given
+
+{{#include tables/Keqing_weapon_full.html}}
+
+When 20 energies are given
+
+{{#include tables/Keqing_weapon_e20.html}}
 
 ## Artifacts
 
-{{#include tables/Keqing_artifact.html}}
+When full energy is given
+
+{{#include tables/Keqing_artifact_full.html}}
+
+When 20 energies are given
+
+{{#include tables/Keqing_artifact_e20.html}}
 
 # Credit
 
