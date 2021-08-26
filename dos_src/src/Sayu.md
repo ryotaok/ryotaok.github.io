@@ -1,8 +1,8 @@
 # Sayu
 
-Sayu is the **35th** position on average out of 43
+Sayu is the **35th** position on average out of 42
 characters when full energy is given at the beginning, and is the
-**30th** position on average when 20 energy is given at the
+**33th** position on average when 20 energy is given at the
 beginning. See [Simulation Settings](./simulation_settings.md) for more
 information.
 
@@ -30,6 +30,12 @@ When full energy is given
 When 20 energies are given
 
 {{#include tables/Sayu_artifact_e20.html}}
+
+## Supporters
+
+When 20 energies are given
+
+{{#include tables/Sayu_supporter_rank.html}}
 
 # Credit
 

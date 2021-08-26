@@ -3,4 +3,4 @@ authors = ["ryota"]
 language = "en"
 multilingual = false
 src = "src"
-title = "DOS Simulation Reports for Genshin Impact (原神)"
+title = "DOS damage output simulation for Genshin Impact (原神)"

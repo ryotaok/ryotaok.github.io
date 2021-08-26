@@ -1,8 +1,8 @@
 # Yoimiya
 
-Yoimiya is the **3rd** position on average out of 43
+Yoimiya is the **3rd** position on average out of 42
 characters when full energy is given at the beginning, and is the
-**1st** position on average when 20 energy is given at the
+**2nd** position on average when 20 energy is given at the
 beginning. See [Simulation Settings](./simulation_settings.md) for more
 information.
 
@@ -30,6 +30,12 @@ When full energy is given
 When 20 energies are given
 
 {{#include tables/Yoimiya_artifact_e20.html}}
+
+## Supporters
+
+When 20 energies are given
+
+{{#include tables/Yoimiya_supporter_rank.html}}
 
 # Credit
 

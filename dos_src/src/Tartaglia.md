@@ -1,8 +1,8 @@
 # Tartaglia
 
-Tartaglia is the **12th** position on average out of 43
+Tartaglia is the **9th** position on average out of 42
 characters when full energy is given at the beginning, and is the
-**11th** position on average when 20 energy is given at the
+**8th** position on average when 20 energy is given at the
 beginning. See [Simulation Settings](./simulation_settings.md) for more
 information.
 
@@ -30,6 +30,12 @@ When full energy is given
 When 20 energies are given
 
 {{#include tables/Tartaglia_artifact_e20.html}}
+
+## Supporters
+
+When 20 energies are given
+
+{{#include tables/Tartaglia_supporter_rank.html}}
 
 # Credit
 

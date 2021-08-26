@@ -1,8 +1,8 @@
 # Xingqiu
 
-Xingqiu is the **15th** position on average out of 43
+Xingqiu is the **16th** position on average out of 42
 characters when full energy is given at the beginning, and is the
-**36th** position on average when 20 energy is given at the
+**38th** position on average when 20 energy is given at the
 beginning. See [Simulation Settings](./simulation_settings.md) for more
 information.
 
@@ -30,6 +30,12 @@ When full energy is given
 When 20 energies are given
 
 {{#include tables/Xingqiu_artifact_e20.html}}
+
+## Supporters
+
+When 20 energies are given
+
+{{#include tables/Xingqiu_supporter_rank.html}}
 
 # Credit
 
