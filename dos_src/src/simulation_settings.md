@@ -2,7 +2,7 @@
 
 Characters:
 
-- All characters up to version 2.1 are implemented (you can choose a preferable version for simulation).
+- All characters up to version 2.1 are implemented.
 - Using stats of character level at 90.
 - All talent levels are 10.
 - Constellations are limited to 0 for now.
@@ -13,13 +13,13 @@ In this program, most of `Attack` are crated by characters at the same time as `
 
 Weapons:
 
-- Most weapons up to version 2.1 are implemented (you can choose a preferable version for simulation).
+- Most weapons up to version 2.1 are implemented.
 - Using stats of weapon level at 90.
 - All five star weapons have the refinement rank of 1, while all four star weapons have the refinement rank of 5. Some three star weapons are included.
 
 Artifacts:
 
-- Most artifacts up to version 2.1 are implemented (you can choose a preferable version for simulation).
+- Most artifacts up to version 2.1 are implemented.
 - All the artifacts have the same stats: 80 ATK%, 80% Crit Rate, 311 flat ATK, 46.6% or 58.3% DMG bonus for the respective character's vision. If the sum of Crit rate exceeds 80%, the excesses are converted to Crit damage.
 
 Damage calculation:
@@ -62,7 +62,6 @@ For Anemo characters, I think elemental absorption works correctly.
 | Name               | Normal attack       | Charge attack                        | Press skill                                          | Hold Skill                  | Burst                                        | Other passives (and alternate sprint)                          |
 | --                 | --                  | --                                   | --                                                   | --                          | --                                           | --                                                             |
 | Raiden Shogun      | WIP                 |                                      | Burst DMG bonus may be incorrect                     |                             | Starting 40 resolve stacks and Incomplete    |                                                                |
-| Sangonomiya Kokomi | WIP                 |                                      | Ripple DMG should be correct but incomplete          |                             | DMG bonuses should be correct but incomplete |                                                                |
 | KujouSara          | WIP                 |                                      | Incomplete                                           |                             | Incomplete                                   |                                                                |
 | Aloy               | WIP                 |                                      | May be incorrect                                     |                             |                                              |                                                                |
 | Ayaka              |                     |                                      |                                                      |                             | 15 hits in total                             | A4 bonus and infusion are always active                        |

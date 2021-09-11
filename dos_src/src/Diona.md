@@ -39,6 +39,5 @@ When 20 energies are given
 
 # Credit
 
-- <https://genshin.honeyhunterworld.com>
 - <https://keqingmains.com>
 - <https://genshin-impact.fandom.com>

@@ -4,7 +4,6 @@
 
 - [Raiden Shogun](./Raiden_Shogun.md)
 - [Kujou Sara](./Kujou_Sara.md)
-- [Sangonomiya Kokomi](./Sangonomiya_Kokomi.md)
 - [Aloy](./Aloy.md)
 
 - [Ayaka](./Ayaka.md)
