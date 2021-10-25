@@ -3,6 +3,7 @@
 [Overview](./overview.md)
 
 - [Raiden Shogun](./Raiden_Shogun.md)
+- [Sangonomiya Kokomi](./Sangonomiya_Kokomi.md)
 - [Kujou Sara](./Kujou_Sara.md)
 - [Aloy](./Aloy.md)
 
@@ -54,7 +55,7 @@
 - [Venti](./Venti.md)
 
 - [Ningguang](./Ningguang.md)
-- [Noelle](./Noelle.md)
+- [Noelle (C6)](./Noelle_(C6).md)
 - [Traveler (Geo)](./Traveler_(Geo).md)
 
 ---

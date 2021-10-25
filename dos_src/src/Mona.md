@@ -1,15 +1,15 @@
 # Mona
 
-Mona is the **17th** position on average out of 42
+Mona is the **21th** position on average out of 42
 characters when full energy is given at the beginning, and is the
-**17th** position on average when 20 energy is given at the
+**20th** position on average when 20 energy is given at the
 beginning. See [Simulation Settings](./simulation_settings.md) for more
 information.
 
 The following tables show relative strength of the available weapons and
-artifacts. The columns of "5s", "10s" and "20s" are obtained by
-simulating max damage of the weapons and artifacts at a particular
-moment.
+artifacts. Each column of seconds shows the maximum total damage at a
+particular moment when the character uses the respective weapons and
+artifacts.
 
 ## Weapons
 
@@ -30,12 +30,6 @@ When full energy is given
 When 20 energies are given
 
 {{#include tables/Mona_artifact_e20.html}}
-
-## Supporters
-
-When 20 energies are given
-
-{{#include tables/Mona_supporter_rank.html}}
 
 # Credit
 
