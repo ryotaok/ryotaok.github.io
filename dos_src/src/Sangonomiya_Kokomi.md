@@ -1,8 +1,8 @@
 # Sangonomiya Kokomi
 
-Sangonomiya Kokomi is the **17th** position on average out of 42
+Sangonomiya Kokomi is the **17th** position on average out of 46
 characters when full energy is given at the beginning, and is the
-**32th** position on average when 20 energy is given at the
+**34th** position on average when 20 energy is given at the
 beginning. See [Simulation Settings](./simulation_settings.md) for more
 information.
 
@@ -30,6 +30,12 @@ When full energy is given
 When 20 energies are given
 
 {{#include tables/Sangonomiya_Kokomi_artifact_e20.html}}
+
+## Supporters
+
+When full energy is given
+
+{{#include tables/Sangonomiya_Kokomi_supporter_rank.html}}
 
 # Credit
 

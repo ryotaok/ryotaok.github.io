@@ -1,0 +1,1180 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Thoma - DOS damage output simulation for Genshin Impact (原神)</title>
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="overview.html">Overview</a></li><li class="chapter-item expanded "><a href="Arataki_Itto.html"><strong aria-hidden="true">1.</strong> Arataki Itto</a></li><li class="chapter-item expanded "><a href="Gorou.html"><strong aria-hidden="true">2.</strong> Gorou</a></li><li class="chapter-item expanded "><a href="Thoma.html" class="active"><strong aria-hidden="true">3.</strong> Thoma</a></li><li class="chapter-item expanded "><a href="Raiden_Shogun.html"><strong aria-hidden="true">4.</strong> Raiden Shogun</a></li><li class="chapter-item expanded "><a href="Sangonomiya_Kokomi.html"><strong aria-hidden="true">5.</strong> Sangonomiya Kokomi</a></li><li class="chapter-item expanded "><a href="Kujou_Sara.html"><strong aria-hidden="true">6.</strong> Kujou Sara</a></li><li class="chapter-item expanded "><a href="Aloy.html"><strong aria-hidden="true">7.</strong> Aloy</a></li><li class="chapter-item expanded "><a href="Ayaka.html"><strong aria-hidden="true">8.</strong> Ayaka</a></li><li class="chapter-item expanded "><a href="Yoimiya.html"><strong aria-hidden="true">9.</strong> Yoimiya</a></li><li class="chapter-item expanded "><a href="Sayu.html"><strong aria-hidden="true">10.</strong> Sayu</a></li><li class="chapter-item expanded "><a href="Traveler_(Electro).html"><strong aria-hidden="true">11.</strong> Traveler (Electro)</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="Kazuha.html"><strong aria-hidden="true">12.</strong> Kazuha</a></li><li class="chapter-item expanded "><a href="Yanfei.html"><strong aria-hidden="true">13.</strong> Yanfei</a></li><li class="chapter-item expanded "><a href="Eula.html"><strong aria-hidden="true">14.</strong> Eula</a></li><li class="chapter-item expanded "><a href="Rosaria.html"><strong aria-hidden="true">15.</strong> Rosaria</a></li><li class="chapter-item expanded "><a href="Xiao.html"><strong aria-hidden="true">16.</strong> Xiao</a></li><li class="chapter-item expanded "><a href="Hu_Tao.html"><strong aria-hidden="true">17.</strong> Hu Tao</a></li><li class="chapter-item expanded "><a href="Albedo.html"><strong aria-hidden="true">18.</strong> Albedo</a></li><li class="chapter-item expanded "><a href="Ganyu.html"><strong aria-hidden="true">19.</strong> Ganyu</a></li><li class="chapter-item expanded "><a href="Tartaglia.html"><strong aria-hidden="true">20.</strong> Tartaglia</a></li><li class="chapter-item expanded "><a href="Diona.html"><strong aria-hidden="true">21.</strong> Diona</a></li><li class="chapter-item expanded "><a href="Zhongli.html"><strong aria-hidden="true">22.</strong> Zhongli</a></li><li class="chapter-item expanded "><a href="Xinyan.html"><strong aria-hidden="true">23.</strong> Xinyan</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="Amber.html"><strong aria-hidden="true">24.</strong> Amber</a></li><li class="chapter-item expanded "><a href="Bennett.html"><strong aria-hidden="true">25.</strong> Bennett</a></li><li class="chapter-item expanded "><a href="Diluc.html"><strong aria-hidden="true">26.</strong> Diluc</a></li><li class="chapter-item expanded "><a href="Klee.html"><strong aria-hidden="true">27.</strong> Klee</a></li><li class="chapter-item expanded "><a href="Xiangling.html"><strong aria-hidden="true">28.</strong> Xiangling</a></li><li class="chapter-item expanded "><a href="Barbara.html"><strong aria-hidden="true">29.</strong> Barbara</a></li><li class="chapter-item expanded "><a href="Mona.html"><strong aria-hidden="true">30.</strong> Mona</a></li><li class="chapter-item expanded "><a href="Xingqiu.html"><strong aria-hidden="true">31.</strong> Xingqiu</a></li><li class="chapter-item expanded "><a href="Beidou.html"><strong aria-hidden="true">32.</strong> Beidou</a></li><li class="chapter-item expanded "><a href="Fischl.html"><strong aria-hidden="true">33.</strong> Fischl</a></li><li class="chapter-item expanded "><a href="Keqing.html"><strong aria-hidden="true">34.</strong> Keqing</a></li><li class="chapter-item expanded "><a href="Lisa.html"><strong aria-hidden="true">35.</strong> Lisa</a></li><li class="chapter-item expanded "><a href="Razor.html"><strong aria-hidden="true">36.</strong> Razor</a></li><li class="chapter-item expanded "><a href="Chongyun.html"><strong aria-hidden="true">37.</strong> Chongyun</a></li><li class="chapter-item expanded "><a href="Kaeya.html"><strong aria-hidden="true">38.</strong> Kaeya</a></li><li class="chapter-item expanded "><a href="Qiqi.html"><strong aria-hidden="true">39.</strong> Qiqi</a></li><li class="chapter-item expanded "><a href="Jean.html"><strong aria-hidden="true">40.</strong> Jean</a></li><li class="chapter-item expanded "><a href="Sucrose.html"><strong aria-hidden="true">41.</strong> Sucrose</a></li><li class="chapter-item expanded "><a href="Traveler_(Anemo).html"><strong aria-hidden="true">42.</strong> Traveler (Anemo)</a></li><li class="chapter-item expanded "><a href="Venti.html"><strong aria-hidden="true">43.</strong> Venti</a></li><li class="chapter-item expanded "><a href="Ningguang.html"><strong aria-hidden="true">44.</strong> Ningguang</a></li><li class="chapter-item expanded "><a href="Noelle_(C6).html"><strong aria-hidden="true">45.</strong> Noelle (C6)</a></li><li class="chapter-item expanded "><a href="Traveler_(Geo).html"><strong aria-hidden="true">46.</strong> Traveler (Geo)</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="simulation_settings.html">Simulation Settings</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">DOS damage output simulation for Genshin Impact (原神)</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="thoma"><a class="header" href="#thoma">Thoma</a></h1>
+<p>Thoma is the <strong>32th</strong> position on average out of 46
+characters when full energy is given at the beginning, and is the
+<strong>41th</strong> position on average when 20 energy is given at the
+beginning. See <a href="./simulation_settings.html">Simulation Settings</a> for more
+information.</p>
+<p>The following tables show relative strength of the available weapons and
+artifacts. Each column of seconds shows the maximum total damage at a
+particular moment when the character uses the respective weapons and
+artifacts.</p>
+<h2 id="weapons"><a class="header" href="#weapons">Weapons</a></h2>
+<p>When full energy is given</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>weapon1</th>
+      <th>artifact1</th>
+      <th>10s</th>
+      <th>%</th>
+      <th>artifact1</th>
+      <th>15s</th>
+      <th>%</th>
+      <th>artifact1</th>
+      <th>20s</th>
+      <th>%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Staff of Homa</td>
+      <td>Lavawalker</td>
+      <td>119195</td>
+      <td>100</td>
+      <td>Lavawalker</td>
+      <td>172144</td>
+      <td>100</td>
+      <td>Lavawalker</td>
+      <td>216944</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>Primordial Jade Winged-Spear</td>
+      <td>Lavawalker</td>
+      <td>114074</td>
+      <td>96</td>
+      <td>Lavawalker</td>
+      <td>160067</td>
+      <td>93</td>
+      <td>Lavawalker</td>
+      <td>203942</td>
+      <td>94</td>
+    </tr>
+    <tr>
+      <td>Deathmatch</td>
+      <td>Lavawalker</td>
+      <td>105788</td>
+      <td>89</td>
+      <td>Lavawalker</td>
+      <td>152787</td>
+      <td>89</td>
+      <td>Lavawalker</td>
+      <td>192516</td>
+      <td>89</td>
+    </tr>
+    <tr>
+      <td>Crescent Pike</td>
+      <td>Lavawalker</td>
+      <td>103548</td>
+      <td>87</td>
+      <td>Lavawalker</td>
+      <td>150976</td>
+      <td>88</td>
+      <td>Lavawalker</td>
+      <td>193253</td>
+      <td>89</td>
+    </tr>
+    <tr>
+      <td>Vortex Vanquisher</td>
+      <td>Lavawalker</td>
+      <td>103767</td>
+      <td>87</td>
+      <td>Lavawalker</td>
+      <td>148171</td>
+      <td>86</td>
+      <td>Lavawalker</td>
+      <td>187531</td>
+      <td>86</td>
+    </tr>
+    <tr>
+      <td>Skyward Spine</td>
+      <td>Lavawalker</td>
+      <td>100680</td>
+      <td>84</td>
+      <td>Lavawalker</td>
+      <td>145393</td>
+      <td>84</td>
+      <td>Lavawalker</td>
+      <td>182993</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <td>Wavebreaker's Fin</td>
+      <td>Lavawalker</td>
+      <td>99242</td>
+      <td>83</td>
+      <td>Lavawalker</td>
+      <td>143798</td>
+      <td>84</td>
+      <td>Lavawalker</td>
+      <td>176829</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <td>Blackcliff Pole</td>
+      <td>Lavawalker</td>
+      <td>97628</td>
+      <td>82</td>
+      <td>Lavawalker</td>
+      <td>141006</td>
+      <td>82</td>
+      <td>Lavawalker</td>
+      <td>177648</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <td>Lithic Spear</td>
+      <td>Lavawalker</td>
+      <td>92049</td>
+      <td>77</td>
+      <td>Lavawalker</td>
+      <td>132921</td>
+      <td>77</td>
+      <td>Lavawalker</td>
+      <td>167635</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <td>White Tassel</td>
+      <td>Lavawalker</td>
+      <td>90073</td>
+      <td>76</td>
+      <td>Lavawalker</td>
+      <td>130684</td>
+      <td>76</td>
+      <td>Lavawalker</td>
+      <td>165777</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <td>Dragonspine Spear</td>
+      <td>Lavawalker</td>
+      <td>87194</td>
+      <td>73</td>
+      <td>Lavawalker</td>
+      <td>128541</td>
+      <td>75</td>
+      <td>Lavawalker</td>
+      <td>161816</td>
+      <td>75</td>
+    </tr>
+    <tr>
+      <td>Engulfing Lightning</td>
+      <td>Lavawalker</td>
+      <td>85496</td>
+      <td>72</td>
+      <td>Lavawalker</td>
+      <td>123091</td>
+      <td>72</td>
+      <td>Lavawalker</td>
+      <td>154458</td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <td>Royal Spear</td>
+      <td>Lavawalker</td>
+      <td>83187</td>
+      <td>70</td>
+      <td>Lavawalker</td>
+      <td>120132</td>
+      <td>70</td>
+      <td>Lavawalker</td>
+      <td>151456</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <td>Dragon's Bane</td>
+      <td>Lavawalker</td>
+      <td>81612</td>
+      <td>68</td>
+      <td>Lavawalker</td>
+      <td>118293</td>
+      <td>69</td>
+      <td>Lavawalker</td>
+      <td>149217</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <td>The Catch</td>
+      <td>Lavawalker</td>
+      <td>80345</td>
+      <td>67</td>
+      <td>Lavawalker</td>
+      <td>116394</td>
+      <td>68</td>
+      <td>Lavawalker</td>
+      <td>143852</td>
+      <td>66</td>
+    </tr>
+    <tr>
+      <td>Kitain Cross Spear</td>
+      <td>Lavawalker</td>
+      <td>75760</td>
+      <td>64</td>
+      <td>Lavawalker</td>
+      <td>109236</td>
+      <td>63</td>
+      <td>Lavawalker</td>
+      <td>137902</td>
+      <td>64</td>
+    </tr>
+    <tr>
+      <td>Prototype Starglitter</td>
+      <td>Lavawalker</td>
+      <td>75309</td>
+      <td>63</td>
+      <td>Lavawalker</td>
+      <td>107937</td>
+      <td>63</td>
+      <td>Lavawalker</td>
+      <td>138245</td>
+      <td>64</td>
+    </tr>
+    <tr>
+      <td>Favonius Lance</td>
+      <td>Lavawalker</td>
+      <td>75331</td>
+      <td>63</td>
+      <td>Lavawalker</td>
+      <td>108807</td>
+      <td>63</td>
+      <td>Lavawalker</td>
+      <td>137044</td>
+      <td>63</td>
+    </tr>
+  </tbody>
+</table>
+<p>When 20 energies are given</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>weapon1</th>
+      <th>artifact1</th>
+      <th>10s</th>
+      <th>%</th>
+      <th>artifact1</th>
+      <th>20s</th>
+      <th>%</th>
+      <th>artifact1</th>
+      <th>30s</th>
+      <th>%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Crescent Pike</td>
+      <td>Gladiator's Finale</td>
+      <td>75372</td>
+      <td>100</td>
+      <td>Gladiator's Finale</td>
+      <td>146629</td>
+      <td>100</td>
+      <td>Gladiator's Finale</td>
+      <td>213409</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>Staff of Homa</td>
+      <td>Gladiator's Finale</td>
+      <td>75554</td>
+      <td>100</td>
+      <td>Gladiator's Finale</td>
+      <td>146936</td>
+      <td>100</td>
+      <td>Gladiator's Finale</td>
+      <td>210906</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <td>Primordial Jade Winged-Spear</td>
+      <td>Gladiator's Finale</td>
+      <td>73395</td>
+      <td>97</td>
+      <td>Gladiator's Finale</td>
+      <td>141437</td>
+      <td>96</td>
+      <td>Gladiator's Finale</td>
+      <td>206522</td>
+      <td>97</td>
+    </tr>
+    <tr>
+      <td>Skyward Spine</td>
+      <td>Gladiator's Finale</td>
+      <td>65916</td>
+      <td>87</td>
+      <td>Gladiator's Finale</td>
+      <td>131130</td>
+      <td>89</td>
+      <td>Gladiator's Finale</td>
+      <td>190904</td>
+      <td>89</td>
+    </tr>
+    <tr>
+      <td>Deathmatch</td>
+      <td>Gladiator's Finale</td>
+      <td>66742</td>
+      <td>88</td>
+      <td>Gladiator's Finale</td>
+      <td>129800</td>
+      <td>88</td>
+      <td>Gladiator's Finale</td>
+      <td>186310</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <td>Vortex Vanquisher</td>
+      <td>Gladiator's Finale</td>
+      <td>66006</td>
+      <td>87</td>
+      <td>Gladiator's Finale</td>
+      <td>127986</td>
+      <td>87</td>
+      <td>Gladiator's Finale</td>
+      <td>184981</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <td>Dragonspine Spear</td>
+      <td>Gladiator's Finale</td>
+      <td>64119</td>
+      <td>85</td>
+      <td>Gladiator's Finale</td>
+      <td>124725</td>
+      <td>85</td>
+      <td>Gladiator's Finale</td>
+      <td>181615</td>
+      <td>85</td>
+    </tr>
+    <tr>
+      <td>White Tassel</td>
+      <td>Gladiator's Finale</td>
+      <td>63052</td>
+      <td>83</td>
+      <td>Gladiator's Finale</td>
+      <td>122512</td>
+      <td>83</td>
+      <td>Gladiator's Finale</td>
+      <td>177592</td>
+      <td>83</td>
+    </tr>
+    <tr>
+      <td>Blackcliff Pole</td>
+      <td>Gladiator's Finale</td>
+      <td>61878</td>
+      <td>82</td>
+      <td>Gladiator's Finale</td>
+      <td>120340</td>
+      <td>82</td>
+      <td>Gladiator's Finale</td>
+      <td>172730</td>
+      <td>81</td>
+    </tr>
+    <tr>
+      <td>Lithic Spear</td>
+      <td>Gladiator's Finale</td>
+      <td>58587</td>
+      <td>78</td>
+      <td>Gladiator's Finale</td>
+      <td>113939</td>
+      <td>78</td>
+      <td>Gladiator's Finale</td>
+      <td>163544</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <td>Favonius Lance</td>
+      <td>Gladiator's Finale</td>
+      <td>47992</td>
+      <td>64</td>
+      <td>Gladiator's Finale</td>
+      <td>98778</td>
+      <td>67</td>
+      <td>Gladiator's Finale</td>
+      <td>165353</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <td>Wavebreaker's Fin</td>
+      <td>Gladiator's Finale</td>
+      <td>53568</td>
+      <td>71</td>
+      <td>Gladiator's Finale</td>
+      <td>104179</td>
+      <td>71</td>
+      <td>Gladiator's Finale</td>
+      <td>149534</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <td>Engulfing Lightning</td>
+      <td>Gladiator's Finale</td>
+      <td>52858</td>
+      <td>70</td>
+      <td>Gladiator's Finale</td>
+      <td>103123</td>
+      <td>70</td>
+      <td>Gladiator's Finale</td>
+      <td>148168</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <td>Royal Spear</td>
+      <td>Gladiator's Finale</td>
+      <td>52965</td>
+      <td>70</td>
+      <td>Gladiator's Finale</td>
+      <td>103007</td>
+      <td>70</td>
+      <td>Gladiator's Finale</td>
+      <td>147852</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <td>Dragon's Bane</td>
+      <td>Gladiator's Finale</td>
+      <td>52019</td>
+      <td>69</td>
+      <td>Gladiator's Finale</td>
+      <td>102308</td>
+      <td>70</td>
+      <td>Gladiator's Finale</td>
+      <td>147468</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <td>Prototype Starglitter</td>
+      <td>Gladiator's Finale</td>
+      <td>49783</td>
+      <td>66</td>
+      <td>Gladiator's Finale</td>
+      <td>97648</td>
+      <td>66</td>
+      <td>Gladiator's Finale</td>
+      <td>142281</td>
+      <td>67</td>
+    </tr>
+    <tr>
+      <td>Kitain Cross Spear</td>
+      <td>Gladiator's Finale</td>
+      <td>48453</td>
+      <td>64</td>
+      <td>Gladiator's Finale</td>
+      <td>94257</td>
+      <td>64</td>
+      <td>Gladiator's Finale</td>
+      <td>134892</td>
+      <td>63</td>
+    </tr>
+    <tr>
+      <td>The Catch</td>
+      <td>Gladiator's Finale</td>
+      <td>45065</td>
+      <td>60</td>
+      <td>Gladiator's Finale</td>
+      <td>87643</td>
+      <td>60</td>
+      <td>Gladiator's Finale</td>
+      <td>125798</td>
+      <td>59</td>
+    </tr>
+  </tbody>
+</table>
+<h2 id="artifacts"><a class="header" href="#artifacts">Artifacts</a></h2>
+<p>When full energy is given</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>artifact1</th>
+      <th>weapon1</th>
+      <th>10s</th>
+      <th>%</th>
+      <th>weapon1</th>
+      <th>15s</th>
+      <th>%</th>
+      <th>weapon1</th>
+      <th>20s</th>
+      <th>%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Lavawalker</td>
+      <td>Staff of Homa</td>
+      <td>119195</td>
+      <td>100</td>
+      <td>Staff of Homa</td>
+      <td>172144</td>
+      <td>100</td>
+      <td>Staff of Homa</td>
+      <td>216944</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>Gladiator's Finale</td>
+      <td>Staff of Homa</td>
+      <td>115473</td>
+      <td>97</td>
+      <td>Staff of Homa</td>
+      <td>166720</td>
+      <td>97</td>
+      <td>Staff of Homa</td>
+      <td>211226</td>
+      <td>97</td>
+    </tr>
+    <tr>
+      <td>GFShimenawa ATK 36</td>
+      <td>Staff of Homa</td>
+      <td>104433</td>
+      <td>88</td>
+      <td>Staff of Homa</td>
+      <td>150060</td>
+      <td>87</td>
+      <td>Staff of Homa</td>
+      <td>188505</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <td>GFElem ATK 18 DMG 15</td>
+      <td>Staff of Homa</td>
+      <td>104159</td>
+      <td>87</td>
+      <td>Staff of Homa</td>
+      <td>149450</td>
+      <td>87</td>
+      <td>Staff of Homa</td>
+      <td>187089</td>
+      <td>86</td>
+    </tr>
+    <tr>
+      <td>Emblem of Severed Fate</td>
+      <td>Staff of Homa</td>
+      <td>101425</td>
+      <td>85</td>
+      <td>Staff of Homa</td>
+      <td>146168</td>
+      <td>85</td>
+      <td>Staff of Homa</td>
+      <td>181146</td>
+      <td>83</td>
+    </tr>
+    <tr>
+      <td>Crimson Witch of Flames</td>
+      <td>Staff of Homa</td>
+      <td>95547</td>
+      <td>80</td>
+      <td>Staff of Homa</td>
+      <td>136552</td>
+      <td>79</td>
+      <td>Staff of Homa</td>
+      <td>170743</td>
+      <td>79</td>
+    </tr>
+    <tr>
+      <td>EoSF ATK70 CR47 ER77</td>
+      <td>Staff of Homa</td>
+      <td>77767</td>
+      <td>65</td>
+      <td>Staff of Homa</td>
+      <td>112469</td>
+      <td>65</td>
+      <td>Staff of Homa</td>
+      <td>138432</td>
+      <td>64</td>
+    </tr>
+    <tr>
+      <td>GFElem ATK88 CR46 Em280 DMG15</td>
+      <td>Staff of Homa</td>
+      <td>76597</td>
+      <td>64</td>
+      <td>Staff of Homa</td>
+      <td>109912</td>
+      <td>64</td>
+      <td>Staff of Homa</td>
+      <td>137532</td>
+      <td>63</td>
+    </tr>
+    <tr>
+      <td>GFElem ATK70 CR35 Em420 DMG15</td>
+      <td>Staff of Homa</td>
+      <td>66122</td>
+      <td>55</td>
+      <td>Staff of Homa</td>
+      <td>94891</td>
+      <td>55</td>
+      <td>Staff of Homa</td>
+      <td>118663</td>
+      <td>55</td>
+    </tr>
+  </tbody>
+</table>
+<p>When 20 energies are given</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>artifact1</th>
+      <th>weapon1</th>
+      <th>10s</th>
+      <th>%</th>
+      <th>weapon1</th>
+      <th>20s</th>
+      <th>%</th>
+      <th>weapon1</th>
+      <th>30s</th>
+      <th>%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Gladiator's Finale</td>
+      <td>Staff of Homa</td>
+      <td>75554</td>
+      <td>100</td>
+      <td>Staff of Homa</td>
+      <td>146936</td>
+      <td>100</td>
+      <td>Crescent Pike</td>
+      <td>213409</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>Lavawalker</td>
+      <td>Crescent Pike</td>
+      <td>74268</td>
+      <td>98</td>
+      <td>Crescent Pike</td>
+      <td>145764</td>
+      <td>99</td>
+      <td>Crescent Pike</td>
+      <td>211829</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <td>GFShimenawa ATK 36</td>
+      <td>Crescent Pike</td>
+      <td>68714</td>
+      <td>91</td>
+      <td>Crescent Pike</td>
+      <td>133770</td>
+      <td>91</td>
+      <td>Crescent Pike</td>
+      <td>193790</td>
+      <td>91</td>
+    </tr>
+    <tr>
+      <td>GFElem ATK 18 DMG 15</td>
+      <td>Crescent Pike</td>
+      <td>64946</td>
+      <td>86</td>
+      <td>Crescent Pike</td>
+      <td>126464</td>
+      <td>86</td>
+      <td>Crescent Pike</td>
+      <td>182689</td>
+      <td>86</td>
+    </tr>
+    <tr>
+      <td>Crimson Witch of Flames</td>
+      <td>Crescent Pike</td>
+      <td>60293</td>
+      <td>80</td>
+      <td>Crescent Pike</td>
+      <td>117390</td>
+      <td>80</td>
+      <td>Crescent Pike</td>
+      <td>169820</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <td>Emblem of Severed Fate</td>
+      <td>Crescent Pike</td>
+      <td>60025</td>
+      <td>79</td>
+      <td>Crescent Pike</td>
+      <td>116854</td>
+      <td>80</td>
+      <td>Crescent Pike</td>
+      <td>169284</td>
+      <td>79</td>
+    </tr>
+    <tr>
+      <td>GFElem ATK88 CR46 Em280 DMG15</td>
+      <td>Crescent Pike</td>
+      <td>48834</td>
+      <td>65</td>
+      <td>Crescent Pike</td>
+      <td>95091</td>
+      <td>65</td>
+      <td>Crescent Pike</td>
+      <td>137366</td>
+      <td>64</td>
+    </tr>
+    <tr>
+      <td>EoSF ATK70 CR47 ER77</td>
+      <td>Crescent Pike</td>
+      <td>44959</td>
+      <td>60</td>
+      <td>Crescent Pike</td>
+      <td>87524</td>
+      <td>60</td>
+      <td>Engulfing Lightning</td>
+      <td>139688</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <td>GFElem ATK70 CR35 Em420 DMG15</td>
+      <td>Crescent Pike</td>
+      <td>43363</td>
+      <td>57</td>
+      <td>Crescent Pike</td>
+      <td>84438</td>
+      <td>57</td>
+      <td>Crescent Pike</td>
+      <td>121978</td>
+      <td>57</td>
+    </tr>
+  </tbody>
+</table>
+<h2 id="supporters"><a class="header" href="#supporters">Supporters</a></h2>
+<p>When full energy is given</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>character</th>
+      <th>weapon</th>
+      <th>artifact</th>
+      <th>10s</th>
+      <th>%</th>
+      <th>character</th>
+      <th>weapon</th>
+      <th>artifact</th>
+      <th>20s</th>
+      <th>%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Thoma<br><br>Mona</td>
+      <td>Staff of Homa<br><br>Skyward Atlas</td>
+      <td>Gladiator's Finale<br><br>Noblesse Oblige</td>
+      <td>299021</td>
+      <td>100</td>
+      <td>Thoma<br><br>Mona</td>
+      <td>Staff of Homa<br><br>Skyward Atlas</td>
+      <td>Gladiator's Finale<br><br>Noblesse Oblige</td>
+      <td>446346</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>Thoma<br><br>Lisa</td>
+      <td>Staff of Homa<br><br>Skyward Atlas</td>
+      <td>Gladiator's Finale<br><br>GFElem ATK 18 DMG 15</td>
+      <td>259730</td>
+      <td>87</td>
+      <td>Thoma<br><br>Lisa</td>
+      <td>Staff of Homa<br><br>Skyward Atlas</td>
+      <td>Gladiator's Finale<br><br>GFElem ATK 18 DMG 15</td>
+      <td>438493</td>
+      <td>98</td>
+    </tr>
+    <tr>
+      <td>Thoma<br><br>Kazuha</td>
+      <td>Staff of Homa<br><br>Freedom-Sworn</td>
+      <td>Lavawalker<br><br>Viridescent Venerer</td>
+      <td>262415</td>
+      <td>88</td>
+      <td>Thoma<br><br>Kazuha</td>
+      <td>Staff of Homa<br><br>Freedom-Sworn</td>
+      <td>Gladiator's Finale<br><br>Viridescent Venerer</td>
+      <td>406261</td>
+      <td>91</td>
+    </tr>
+    <tr>
+      <td>Thoma<br><br>Raiden Shogun</td>
+      <td>Staff of Homa<br><br>Deathmatch</td>
+      <td>Gladiator's Finale<br><br>GFElem ATK 18 DMG 15</td>
+      <td>246547</td>
+      <td>82</td>
+      <td>Thoma<br><br>Raiden Shogun</td>
+      <td>Staff of Homa<br><br>Deathmatch</td>
+      <td>Gladiator's Finale<br><br>GFElem ATK 18 DMG 15</td>
+      <td>407711</td>
+      <td>91</td>
+    </tr>
+    <tr>
+      <td>Thoma<br><br>Rosaria</td>
+      <td>Staff of Homa<br><br>Wavebreaker's Fin</td>
+      <td>Gladiator's Finale<br><br>Noblesse Oblige</td>
+      <td>257968</td>
+      <td>86</td>
+      <td>Thoma<br><br>Rosaria</td>
+      <td>Staff of Homa<br><br>Primordial Jade Winged-Spear</td>
+      <td>Gladiator's Finale<br><br>Noblesse Oblige</td>
+      <td>390082</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <td>Thoma<br><br>Kaeya</td>
+      <td>Staff of Homa<br><br>Mistsplitter Reforged</td>
+      <td>Gladiator's Finale<br><br>Noblesse Oblige</td>
+      <td>244071</td>
+      <td>82</td>
+      <td>Thoma<br><br>Kaeya</td>
+      <td>Staff of Homa<br><br>Primordial Jade Cutter</td>
+      <td>Gladiator's Finale<br><br>Noblesse Oblige</td>
+      <td>382034</td>
+      <td>86</td>
+    </tr>
+    <tr>
+      <td>Thoma<br><br>Beidou</td>
+      <td>Staff of Homa<br><br>Redhorn Stonethresher</td>
+      <td>Gladiator's Finale<br><br>GFShimenawa ATK 36</td>
+      <td>239891</td>
+      <td>80</td>
+      <td>Thoma<br><br>Beidou</td>
+      <td>Staff of Homa<br><br>Serpent Spine (start 2s)</td>
+      <td>Gladiator's Finale<br><br>GFShimenawa ATK 36</td>
+      <td>374984</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <td>Thoma<br><br>Xiangling</td>
+      <td>Staff of Homa<br><br>Wavebreaker's Fin</td>
+      <td>Lavawalker<br><br>Lavawalker</td>
+      <td>235301</td>
+      <td>79</td>
+      <td>Thoma<br><br>Xiangling</td>
+      <td>Staff of Homa<br><br>Primordial Jade Winged-Spear</td>
+      <td>Lavawalker<br><br>Lavawalker</td>
+      <td>374581</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <td>Thoma<br><br>Keqing</td>
+      <td>Staff of Homa<br><br>Mistsplitter Reforged</td>
+      <td>Gladiator's Finale<br><br>Noblesse Oblige</td>
+      <td>234372</td>
+      <td>78</td>
+      <td>Thoma<br><br>Keqing</td>
+      <td>Staff of Homa<br><br>Mistsplitter Reforged</td>
+      <td>Gladiator's Finale<br><br>Noblesse Oblige</td>
+      <td>374174</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <td>Thoma<br><br>Bennett</td>
+      <td>Staff of Homa<br><br>Mistsplitter Reforged</td>
+      <td>Lavawalker<br><br>Noblesse Oblige</td>
+      <td>235993</td>
+      <td>79</td>
+      <td>Thoma<br><br>Bennett</td>
+      <td>Staff of Homa<br><br>Mistsplitter Reforged</td>
+      <td>Lavawalker<br><br>Lavawalker</td>
+      <td>370478</td>
+      <td>83</td>
+    </tr>
+    <tr>
+      <td>Thoma<br><br>Ningguang</td>
+      <td>Staff of Homa<br><br>Skyward Atlas</td>
+      <td>Gladiator's Finale<br><br>Noblesse Oblige</td>
+      <td>228224</td>
+      <td>76</td>
+      <td>Thoma<br><br>Ningguang</td>
+      <td>Staff of Homa<br><br>Skyward Atlas</td>
+      <td>Gladiator's Finale<br><br>Noblesse Oblige</td>
+      <td>357919</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <td>Thoma<br><br>Sangonomiya Kokomi</td>
+      <td>Staff of Homa<br><br>Skyward Atlas</td>
+      <td>Gladiator's Finale<br><br>Tenacity of the Millelith (HP)</td>
+      <td>226553</td>
+      <td>76</td>
+      <td>Thoma<br><br>Sangonomiya Kokomi</td>
+      <td>Staff of Homa<br><br>Skyward Atlas</td>
+      <td>Gladiator's Finale<br><br>Tenacity of the Millelith (HP)</td>
+      <td>357376</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <td>Thoma<br><br>Venti</td>
+      <td>Staff of Homa<br><br>Polar Star</td>
+      <td>Gladiator's Finale<br><br>GFElem ATK 18 DMG 15</td>
+      <td>217748</td>
+      <td>73</td>
+      <td>Thoma<br><br>Venti</td>
+      <td>Staff of Homa<br><br>Skyward Harp</td>
+      <td>Gladiator's Finale<br><br>Viridescent Venerer</td>
+      <td>363108</td>
+      <td>81</td>
+    </tr>
+    <tr>
+      <td>Thoma<br><br>Kujou Sara</td>
+      <td>Staff of Homa<br><br>Skyward Harp</td>
+      <td>Gladiator's Finale<br><br>Thundering Fury</td>
+      <td>216880</td>
+      <td>73</td>
+      <td>Thoma<br><br>Kujou Sara</td>
+      <td>Staff of Homa<br><br>Skyward Harp</td>
+      <td>Gladiator's Finale<br><br>Thundering Fury</td>
+      <td>359414</td>
+      <td>81</td>
+    </tr>
+    <tr>
+      <td>Thoma<br><br>Jean</td>
+      <td>Staff of Homa<br><br>Freedom-Sworn</td>
+      <td>Gladiator's Finale<br><br>Viridescent Venerer</td>
+      <td>216241</td>
+      <td>72</td>
+      <td>Thoma<br><br>Jean</td>
+      <td>Staff of Homa<br><br>Freedom-Sworn</td>
+      <td>Gladiator's Finale<br><br>Viridescent Venerer</td>
+      <td>359973</td>
+      <td>81</td>
+    </tr>
+    <tr>
+      <td>Thoma<br><br>Fischl</td>
+      <td>Staff of Homa<br><br>Sacrificial Bow</td>
+      <td>Gladiator's Finale<br><br>GFElem ATK 18 DMG 15</td>
+      <td>229938</td>
+      <td>77</td>
+      <td>Thoma<br><br>Fischl</td>
+      <td>Staff of Homa<br><br>Sacrificial Bow</td>
+      <td>Gladiator's Finale<br><br>GFElem ATK 18 DMG 15</td>
+      <td>344588</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <td>Thoma<br><br>Traveler (Geo)</td>
+      <td>Staff of Homa<br><br>Mistsplitter Reforged</td>
+      <td>Lavawalker<br><br>GFElem ATK 18 DMG 15</td>
+      <td>202236</td>
+      <td>68</td>
+      <td>Thoma<br><br>Traveler (Geo)</td>
+      <td>Staff of Homa<br><br>Mistsplitter Reforged</td>
+      <td>Lavawalker<br><br>Archaic Petra</td>
+      <td>342910</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <td>Thoma<br><br>Diluc</td>
+      <td>Staff of Homa<br><br>Sacrificial Greatsword</td>
+      <td>Lavawalker<br><br>Noblesse Oblige</td>
+      <td>190007</td>
+      <td>64</td>
+      <td>Thoma<br><br>Diluc</td>
+      <td>Staff of Homa<br><br>Sacrificial Greatsword</td>
+      <td>Lavawalker<br><br>Noblesse Oblige</td>
+      <td>349019</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <td>Thoma<br><br>Albedo</td>
+      <td>Staff of Homa<br><br>Cinnabar Spindle</td>
+      <td>Lavawalker<br><br>Tenacity of the Millelith</td>
+      <td>191892</td>
+      <td>64</td>
+      <td>Thoma<br><br>Albedo</td>
+      <td>Staff of Homa<br><br>Cinnabar Spindle</td>
+      <td>Lavawalker<br><br>Tenacity of the Millelith</td>
+      <td>344870</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <td>Thoma<br><br>Xinyan</td>
+      <td>Staff of Homa<br><br>Redhorn Stonethresher</td>
+      <td>Lavawalker<br><br>Lavawalker</td>
+      <td>193959</td>
+      <td>65</td>
+      <td>Thoma<br><br>Xinyan</td>
+      <td>Staff of Homa<br><br>Song of Broken Pines</td>
+      <td>Lavawalker<br><br>Lavawalker</td>
+      <td>337952</td>
+      <td>76</td>
+    </tr>
+  </tbody>
+</table>
+<h1 id="credit"><a class="header" href="#credit">Credit</a></h1>
+<ul>
+<li><a href="https://keqingmains.com">https://keqingmains.com</a></li>
+<li><a href="https://genshin-impact.fandom.com">https://genshin-impact.fandom.com</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Gorou.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="Raiden_Shogun.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Gorou.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="Raiden_Shogun.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

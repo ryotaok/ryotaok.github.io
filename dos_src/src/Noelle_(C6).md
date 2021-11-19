@@ -1,8 +1,8 @@
 # Noelle (C6)
 
-Noelle (C6) is the **11th** position on average out of 42
+Noelle (C6) is the **8th** position on average out of 46
 characters when full energy is given at the beginning, and is the
-**35th** position on average when 20 energy is given at the
+**24th** position on average when 20 energy is given at the
 beginning. See [Simulation Settings](./simulation_settings.md) for more
 information.
 
@@ -30,6 +30,12 @@ When full energy is given
 When 20 energies are given
 
 {{#include tables/Noelle_(C6)_artifact_e20.html}}
+
+## Supporters
+
+When full energy is given
+
+{{#include tables/Noelle_(C6)_supporter_rank.html}}
 
 # Credit
 

@@ -1,8 +1,8 @@
 # Albedo
 
-Albedo is the **35th** position on average out of 42
+Albedo is the **35th** position on average out of 46
 characters when full energy is given at the beginning, and is the
-**27th** position on average when 20 energy is given at the
+**25th** position on average when 20 energy is given at the
 beginning. See [Simulation Settings](./simulation_settings.md) for more
 information.
 
@@ -30,6 +30,12 @@ When full energy is given
 When 20 energies are given
 
 {{#include tables/Albedo_artifact_e20.html}}
+
+## Supporters
+
+When full energy is given
+
+{{#include tables/Albedo_supporter_rank.html}}
 
 # Credit
 

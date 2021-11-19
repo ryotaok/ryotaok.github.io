@@ -1,8 +1,8 @@
 # Ningguang
 
-Ningguang is the **8th** position on average out of 42
+Ningguang is the **11th** position on average out of 46
 characters when full energy is given at the beginning, and is the
-**6th** position on average when 20 energy is given at the
+**10th** position on average when 20 energy is given at the
 beginning. See [Simulation Settings](./simulation_settings.md) for more
 information.
 
@@ -30,6 +30,12 @@ When full energy is given
 When 20 energies are given
 
 {{#include tables/Ningguang_artifact_e20.html}}
+
+## Supporters
+
+When full energy is given
+
+{{#include tables/Ningguang_supporter_rank.html}}
 
 # Credit
 

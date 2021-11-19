@@ -2,6 +2,11 @@
 
 [Overview](./overview.md)
 
+- [Arataki Itto](./Arataki_Itto.md)
+- [Gorou](./Gorou.md)
+
+- [Thoma](./Thoma.md)
+
 - [Raiden Shogun](./Raiden_Shogun.md)
 - [Sangonomiya Kokomi](./Sangonomiya_Kokomi.md)
 - [Kujou Sara](./Kujou_Sara.md)
@@ -10,6 +15,9 @@
 - [Ayaka](./Ayaka.md)
 - [Yoimiya](./Yoimiya.md)
 - [Sayu](./Sayu.md)
+- [Traveler (Electro)](./Traveler_(Electro).md)
+
+---
 
 - [Kazuha](./Kazuha.md)
 
@@ -28,6 +36,8 @@
 - [Diona](./Diona.md)
 - [Zhongli](./Zhongli.md)
 - [Xinyan](./Xinyan.md)
+
+---
 
 - [Amber](./Amber.md)
 - [Bennett](./Bennett.md)
