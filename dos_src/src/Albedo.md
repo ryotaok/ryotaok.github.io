@@ -1,8 +1,8 @@
 # Albedo
 
-Albedo is the **35th** position on average out of 46
+Albedo is the **36th** position on average out of 46
 characters when full energy is given at the beginning, and is the
-**25th** position on average when 20 energy is given at the
+**24th** position on average when 20 energy is given at the
 beginning. See [Simulation Settings](./simulation_settings.md) for more
 information.
 

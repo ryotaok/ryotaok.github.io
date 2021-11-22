@@ -1,6 +1,6 @@
 # Ningguang
 
-Ningguang is the **11th** position on average out of 46
+Ningguang is the **14th** position on average out of 46
 characters when full energy is given at the beginning, and is the
 **10th** position on average when 20 energy is given at the
 beginning. See [Simulation Settings](./simulation_settings.md) for more

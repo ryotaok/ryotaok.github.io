@@ -1,6 +1,6 @@
 # Mona
 
-Mona is the **21th** position on average out of 46
+Mona is the **23th** position on average out of 46
 characters when full energy is given at the beginning, and is the
 **20th** position on average when 20 energy is given at the
 beginning. See [Simulation Settings](./simulation_settings.md) for more

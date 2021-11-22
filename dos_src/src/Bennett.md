@@ -1,6 +1,6 @@
 # Bennett
 
-Bennett is the **33th** position on average out of 46
+Bennett is the **35th** position on average out of 46
 characters when full energy is given at the beginning, and is the
 **35th** position on average when 20 energy is given at the
 beginning. See [Simulation Settings](./simulation_settings.md) for more

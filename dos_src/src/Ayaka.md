@@ -1,8 +1,8 @@
 # Ayaka
 
-Ayaka is the **3rd** position on average out of 46
+Ayaka is the **4th** position on average out of 46
 characters when full energy is given at the beginning, and is the
-**7th** position on average when 20 energy is given at the
+**8th** position on average when 20 energy is given at the
 beginning. See [Simulation Settings](./simulation_settings.md) for more
 information.
 

@@ -1,6 +1,6 @@
 # Yoimiya
 
-Yoimiya is the **2nd** position on average out of 46
+Yoimiya is the **3rd** position on average out of 46
 characters when full energy is given at the beginning, and is the
 **1st** position on average when 20 energy is given at the
 beginning. See [Simulation Settings](./simulation_settings.md) for more

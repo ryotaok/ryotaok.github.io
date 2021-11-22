@@ -3,7 +3,7 @@
 [Overview](./overview.md)
 
 - [Arataki Itto](./Arataki_Itto.md)
-- [Gorou](./Gorou.md)
+- [Gorou C6](./Gorou_C6.md)
 
 - [Thoma](./Thoma.md)
 

@@ -1,8 +1,8 @@
 # Traveler (Anemo)
 
-Traveler (Anemo) is the **37th** position on average out of 46
+Traveler (Anemo) is the **38th** position on average out of 46
 characters when full energy is given at the beginning, and is the
-**38th** position on average when 20 energy is given at the
+**39th** position on average when 20 energy is given at the
 beginning. See [Simulation Settings](./simulation_settings.md) for more
 information.
 

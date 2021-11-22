@@ -1,6 +1,6 @@
 # Xiangling
 
-Xiangling is the **19th** position on average out of 46
+Xiangling is the **20th** position on average out of 46
 characters when full energy is given at the beginning, and is the
 **33th** position on average when 20 energy is given at the
 beginning. See [Simulation Settings](./simulation_settings.md) for more
