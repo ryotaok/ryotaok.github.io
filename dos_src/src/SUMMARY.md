@@ -2,6 +2,12 @@
 
 [Overview](./overview.md)
 
+- [Yae Miko 0112](./Yae_Miko_0112.md)
+- [Yae Miko C2](./Yae_Miko_C2.md)
+
+- [Shenhe](./Shenhe.md)
+- [Yun Jin](./Yun_Jin.md)
+
 - [Arataki Itto](./Arataki_Itto.md)
 - [Gorou C6](./Gorou_C6.md)
 
@@ -15,7 +21,7 @@
 - [Ayaka](./Ayaka.md)
 - [Yoimiya](./Yoimiya.md)
 - [Sayu](./Sayu.md)
-- [Traveler (Electro)](./Traveler_(Electro).md)
+- [Traveler (Electro)](./Traveler_Electro.md)
 
 ---
 
@@ -61,12 +67,12 @@
 
 - [Jean](./Jean.md)
 - [Sucrose](./Sucrose.md)
-- [Traveler (Anemo)](./Traveler_(Anemo).md)
+- [Traveler (Anemo)](./Traveler_Anemo.md)
 - [Venti](./Venti.md)
 
 - [Ningguang](./Ningguang.md)
-- [Noelle (C6)](./Noelle_(C6).md)
-- [Traveler (Geo)](./Traveler_(Geo).md)
+- [Noelle (C6)](./Noelle_C6.md)
+- [Traveler (Geo)](./Traveler_Geo.md)
 
 ---
 

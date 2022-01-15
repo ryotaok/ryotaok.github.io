@@ -1,0 +1,1505 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Yae Miko C2 - DOS damage output simulation for Genshin Impact (原神)</title>
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="overview.html">Overview</a></li><li class="chapter-item expanded "><a href="Yae_Miko_0112.html"><strong aria-hidden="true">1.</strong> Yae Miko 0112</a></li><li class="chapter-item expanded "><a href="Yae_Miko_C2.html" class="active"><strong aria-hidden="true">2.</strong> Yae Miko C2</a></li><li class="chapter-item expanded "><a href="Shenhe.html"><strong aria-hidden="true">3.</strong> Shenhe</a></li><li class="chapter-item expanded "><a href="Yun_Jin.html"><strong aria-hidden="true">4.</strong> Yun Jin</a></li><li class="chapter-item expanded "><a href="Arataki_Itto.html"><strong aria-hidden="true">5.</strong> Arataki Itto</a></li><li class="chapter-item expanded "><a href="Gorou_C6.html"><strong aria-hidden="true">6.</strong> Gorou C6</a></li><li class="chapter-item expanded "><a href="Thoma.html"><strong aria-hidden="true">7.</strong> Thoma</a></li><li class="chapter-item expanded "><a href="Raiden_Shogun.html"><strong aria-hidden="true">8.</strong> Raiden Shogun</a></li><li class="chapter-item expanded "><a href="Sangonomiya_Kokomi.html"><strong aria-hidden="true">9.</strong> Sangonomiya Kokomi</a></li><li class="chapter-item expanded "><a href="Kujou_Sara.html"><strong aria-hidden="true">10.</strong> Kujou Sara</a></li><li class="chapter-item expanded "><a href="Aloy.html"><strong aria-hidden="true">11.</strong> Aloy</a></li><li class="chapter-item expanded "><a href="Ayaka.html"><strong aria-hidden="true">12.</strong> Ayaka</a></li><li class="chapter-item expanded "><a href="Yoimiya.html"><strong aria-hidden="true">13.</strong> Yoimiya</a></li><li class="chapter-item expanded "><a href="Sayu.html"><strong aria-hidden="true">14.</strong> Sayu</a></li><li class="chapter-item expanded "><a href="Traveler_Electro.html"><strong aria-hidden="true">15.</strong> Traveler (Electro)</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="Kazuha.html"><strong aria-hidden="true">16.</strong> Kazuha</a></li><li class="chapter-item expanded "><a href="Yanfei.html"><strong aria-hidden="true">17.</strong> Yanfei</a></li><li class="chapter-item expanded "><a href="Eula.html"><strong aria-hidden="true">18.</strong> Eula</a></li><li class="chapter-item expanded "><a href="Rosaria.html"><strong aria-hidden="true">19.</strong> Rosaria</a></li><li class="chapter-item expanded "><a href="Xiao.html"><strong aria-hidden="true">20.</strong> Xiao</a></li><li class="chapter-item expanded "><a href="Hu_Tao.html"><strong aria-hidden="true">21.</strong> Hu Tao</a></li><li class="chapter-item expanded "><a href="Albedo.html"><strong aria-hidden="true">22.</strong> Albedo</a></li><li class="chapter-item expanded "><a href="Ganyu.html"><strong aria-hidden="true">23.</strong> Ganyu</a></li><li class="chapter-item expanded "><a href="Tartaglia.html"><strong aria-hidden="true">24.</strong> Tartaglia</a></li><li class="chapter-item expanded "><a href="Diona.html"><strong aria-hidden="true">25.</strong> Diona</a></li><li class="chapter-item expanded "><a href="Zhongli.html"><strong aria-hidden="true">26.</strong> Zhongli</a></li><li class="chapter-item expanded "><a href="Xinyan.html"><strong aria-hidden="true">27.</strong> Xinyan</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="Amber.html"><strong aria-hidden="true">28.</strong> Amber</a></li><li class="chapter-item expanded "><a href="Bennett.html"><strong aria-hidden="true">29.</strong> Bennett</a></li><li class="chapter-item expanded "><a href="Diluc.html"><strong aria-hidden="true">30.</strong> Diluc</a></li><li class="chapter-item expanded "><a href="Klee.html"><strong aria-hidden="true">31.</strong> Klee</a></li><li class="chapter-item expanded "><a href="Xiangling.html"><strong aria-hidden="true">32.</strong> Xiangling</a></li><li class="chapter-item expanded "><a href="Barbara.html"><strong aria-hidden="true">33.</strong> Barbara</a></li><li class="chapter-item expanded "><a href="Mona.html"><strong aria-hidden="true">34.</strong> Mona</a></li><li class="chapter-item expanded "><a href="Xingqiu.html"><strong aria-hidden="true">35.</strong> Xingqiu</a></li><li class="chapter-item expanded "><a href="Beidou.html"><strong aria-hidden="true">36.</strong> Beidou</a></li><li class="chapter-item expanded "><a href="Fischl.html"><strong aria-hidden="true">37.</strong> Fischl</a></li><li class="chapter-item expanded "><a href="Keqing.html"><strong aria-hidden="true">38.</strong> Keqing</a></li><li class="chapter-item expanded "><a href="Lisa.html"><strong aria-hidden="true">39.</strong> Lisa</a></li><li class="chapter-item expanded "><a href="Razor.html"><strong aria-hidden="true">40.</strong> Razor</a></li><li class="chapter-item expanded "><a href="Chongyun.html"><strong aria-hidden="true">41.</strong> Chongyun</a></li><li class="chapter-item expanded "><a href="Kaeya.html"><strong aria-hidden="true">42.</strong> Kaeya</a></li><li class="chapter-item expanded "><a href="Qiqi.html"><strong aria-hidden="true">43.</strong> Qiqi</a></li><li class="chapter-item expanded "><a href="Jean.html"><strong aria-hidden="true">44.</strong> Jean</a></li><li class="chapter-item expanded "><a href="Sucrose.html"><strong aria-hidden="true">45.</strong> Sucrose</a></li><li class="chapter-item expanded "><a href="Traveler_Anemo.html"><strong aria-hidden="true">46.</strong> Traveler (Anemo)</a></li><li class="chapter-item expanded "><a href="Venti.html"><strong aria-hidden="true">47.</strong> Venti</a></li><li class="chapter-item expanded "><a href="Ningguang.html"><strong aria-hidden="true">48.</strong> Ningguang</a></li><li class="chapter-item expanded "><a href="Noelle_C6.html"><strong aria-hidden="true">49.</strong> Noelle (C6)</a></li><li class="chapter-item expanded "><a href="Traveler_Geo.html"><strong aria-hidden="true">50.</strong> Traveler (Geo)</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="simulation_settings.html">Simulation Settings</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">DOS damage output simulation for Genshin Impact (原神)</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="yae-miko-c2"><a class="header" href="#yae-miko-c2">Yae Miko C2</a></h1>
+<p>Yae Miko C2 is the <strong>7th</strong> position on average out of 50
+characters when full energy is given at the beginning, and is the
+<strong>4th</strong> position on average when 20 energy is given at the
+beginning. See <a href="./simulation_settings.html">Simulation Settings</a> for more
+information.</p>
+<p>The following tables show relative strength of the available weapons and
+artifacts. Each column of seconds shows the maximum total damage at a
+particular moment when the character uses the respective weapons and
+artifacts.</p>
+<h2 id="weapons"><a class="header" href="#weapons">Weapons</a></h2>
+<p>When full energy is given</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>weapon1</th>
+      <th>artifact1</th>
+      <th>10s</th>
+      <th>%</th>
+      <th>artifact1</th>
+      <th>15s</th>
+      <th>%</th>
+      <th>artifact1</th>
+      <th>20s</th>
+      <th>%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Kagura's Verity</td>
+      <td>Thundersoother</td>
+      <td>330197</td>
+      <td>100</td>
+      <td>Thundersoother</td>
+      <td>370534</td>
+      <td>100</td>
+      <td>Thundersoother</td>
+      <td>399358</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>Skyward Atlas</td>
+      <td>Thundersoother</td>
+      <td>314830</td>
+      <td>95</td>
+      <td>Thundersoother</td>
+      <td>365203</td>
+      <td>99</td>
+      <td>Thundersoother</td>
+      <td>397399</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>Memory of Dust (R4)</td>
+      <td>Thundersoother</td>
+      <td>317058</td>
+      <td>96</td>
+      <td>Thundersoother</td>
+      <td>361460</td>
+      <td>98</td>
+      <td>Thundersoother</td>
+      <td>394472</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <td>Lost Prayer to the Sacred Winds</td>
+      <td>Thundersoother</td>
+      <td>298630</td>
+      <td>90</td>
+      <td>Thundersoother</td>
+      <td>340779</td>
+      <td>92</td>
+      <td>Thundersoother</td>
+      <td>372582</td>
+      <td>93</td>
+    </tr>
+    <tr>
+      <td>Solar Pearl</td>
+      <td>Thundersoother</td>
+      <td>300001</td>
+      <td>91</td>
+      <td>Thundersoother</td>
+      <td>338802</td>
+      <td>91</td>
+      <td>Thundersoother</td>
+      <td>367650</td>
+      <td>92</td>
+    </tr>
+    <tr>
+      <td>Memory of Dust</td>
+      <td>Thundersoother</td>
+      <td>298128</td>
+      <td>90</td>
+      <td>Thundersoother</td>
+      <td>338608</td>
+      <td>91</td>
+      <td>Thundersoother</td>
+      <td>368704</td>
+      <td>92</td>
+    </tr>
+    <tr>
+      <td>Blackcliff Agate</td>
+      <td>Thundersoother</td>
+      <td>272478</td>
+      <td>83</td>
+      <td>Thundersoother</td>
+      <td>307668</td>
+      <td>83</td>
+      <td>Thundersoother</td>
+      <td>333831</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <td>Eye of Perception</td>
+      <td>Thundersoother</td>
+      <td>251389</td>
+      <td>76</td>
+      <td>Thundersoother</td>
+      <td>281825</td>
+      <td>76</td>
+      <td>Thundersoother</td>
+      <td>312758</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <td>Wine and Song</td>
+      <td>Thundersoother</td>
+      <td>251955</td>
+      <td>76</td>
+      <td>Thundersoother</td>
+      <td>284493</td>
+      <td>77</td>
+      <td>Thundersoother</td>
+      <td>308685</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <td>The Widsith (EM)</td>
+      <td>Thundersoother</td>
+      <td>246121</td>
+      <td>75</td>
+      <td>Thundersoother</td>
+      <td>277905</td>
+      <td>75</td>
+      <td>Thundersoother</td>
+      <td>301536</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <td>Frostbearer</td>
+      <td>Thundersoother</td>
+      <td>242504</td>
+      <td>73</td>
+      <td>Thundersoother</td>
+      <td>276612</td>
+      <td>75</td>
+      <td>Thundersoother</td>
+      <td>299538</td>
+      <td>75</td>
+    </tr>
+    <tr>
+      <td>Royal Grimoire</td>
+      <td>Thundersoother</td>
+      <td>239988</td>
+      <td>73</td>
+      <td>Thundersoother</td>
+      <td>270978</td>
+      <td>73</td>
+      <td>Thundersoother</td>
+      <td>294018</td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <td>Dodoco Tales</td>
+      <td>Thundersoother</td>
+      <td>235658</td>
+      <td>71</td>
+      <td>Thundersoother</td>
+      <td>266094</td>
+      <td>72</td>
+      <td>Thundersoother</td>
+      <td>288723</td>
+      <td>72</td>
+    </tr>
+    <tr>
+      <td>Everlasting Moonglow</td>
+      <td>Thundersoother</td>
+      <td>227793</td>
+      <td>69</td>
+      <td>Thundersoother</td>
+      <td>259084</td>
+      <td>70</td>
+      <td>Thundersoother</td>
+      <td>282874</td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <td>Mappa Mare</td>
+      <td>Thundersoother</td>
+      <td>223732</td>
+      <td>68</td>
+      <td>Thundersoother</td>
+      <td>251835</td>
+      <td>68</td>
+      <td>Thundersoother</td>
+      <td>272325</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <td>Hakushin Ring</td>
+      <td>Thundersoother</td>
+      <td>213396</td>
+      <td>65</td>
+      <td>Thundersoother</td>
+      <td>240955</td>
+      <td>65</td>
+      <td>Thundersoother</td>
+      <td>261445</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <td>Thrilling Tales of Dragon Slayers</td>
+      <td>Thundersoother</td>
+      <td>215431</td>
+      <td>65</td>
+      <td>Thundersoother</td>
+      <td>238459</td>
+      <td>64</td>
+      <td>Thundersoother</td>
+      <td>255580</td>
+      <td>64</td>
+    </tr>
+    <tr>
+      <td>Sacrificial Fragments</td>
+      <td>Thundersoother</td>
+      <td>213410</td>
+      <td>65</td>
+      <td>Thundersoother</td>
+      <td>238875</td>
+      <td>64</td>
+      <td>Thundersoother</td>
+      <td>257085</td>
+      <td>64</td>
+    </tr>
+    <tr>
+      <td>Favonius Codex</td>
+      <td>Thundersoother</td>
+      <td>201637</td>
+      <td>61</td>
+      <td>Thundersoother</td>
+      <td>227676</td>
+      <td>61</td>
+      <td>Thundersoother</td>
+      <td>247035</td>
+      <td>62</td>
+    </tr>
+    <tr>
+      <td>Prototype Amber</td>
+      <td>Thundersoother</td>
+      <td>201637</td>
+      <td>61</td>
+      <td>Thundersoother</td>
+      <td>227676</td>
+      <td>61</td>
+      <td>Thundersoother</td>
+      <td>247035</td>
+      <td>62</td>
+    </tr>
+  </tbody>
+</table>
+<p>When 20 energies are given</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>weapon1</th>
+      <th>artifact1</th>
+      <th>10s</th>
+      <th>%</th>
+      <th>artifact1</th>
+      <th>20s</th>
+      <th>%</th>
+      <th>artifact1</th>
+      <th>30s</th>
+      <th>%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Kagura's Verity</td>
+      <td>Thundersoother</td>
+      <td>281732</td>
+      <td>100</td>
+      <td>Thundersoother</td>
+      <td>350893</td>
+      <td>100</td>
+      <td>Thundersoother</td>
+      <td>512769</td>
+      <td>98</td>
+    </tr>
+    <tr>
+      <td>Memory of Dust (R4)</td>
+      <td>Thundersoother</td>
+      <td>262897</td>
+      <td>93</td>
+      <td>Thundersoother</td>
+      <td>340311</td>
+      <td>97</td>
+      <td>Thundersoother</td>
+      <td>522116</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>Skyward Atlas</td>
+      <td>Thundersoother</td>
+      <td>259754</td>
+      <td>92</td>
+      <td>Thundersoother</td>
+      <td>342323</td>
+      <td>98</td>
+      <td>Thundersoother</td>
+      <td>496102</td>
+      <td>95</td>
+    </tr>
+    <tr>
+      <td>Lost Prayer to the Sacred Winds</td>
+      <td>Thundersoother</td>
+      <td>246674</td>
+      <td>88</td>
+      <td>Thundersoother</td>
+      <td>320626</td>
+      <td>91</td>
+      <td>Thundersoother</td>
+      <td>495768</td>
+      <td>95</td>
+    </tr>
+    <tr>
+      <td>Memory of Dust</td>
+      <td>Thundersoother</td>
+      <td>246467</td>
+      <td>87</td>
+      <td>Thundersoother</td>
+      <td>317043</td>
+      <td>90</td>
+      <td>Thundersoother</td>
+      <td>482779</td>
+      <td>92</td>
+    </tr>
+    <tr>
+      <td>Solar Pearl</td>
+      <td>Thundersoother</td>
+      <td>242313</td>
+      <td>86</td>
+      <td>Thundersoother</td>
+      <td>309962</td>
+      <td>88</td>
+      <td>Thundersoother</td>
+      <td>462120</td>
+      <td>89</td>
+    </tr>
+    <tr>
+      <td>Blackcliff Agate</td>
+      <td>Thundersoother</td>
+      <td>224217</td>
+      <td>80</td>
+      <td>Thundersoother</td>
+      <td>285570</td>
+      <td>81</td>
+      <td>Thundersoother</td>
+      <td>429654</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <td>Eye of Perception</td>
+      <td>Thundersoother</td>
+      <td>210529</td>
+      <td>75</td>
+      <td>Thundersoother</td>
+      <td>271898</td>
+      <td>77</td>
+      <td>Thundersoother</td>
+      <td>404816</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <td>Wine and Song</td>
+      <td>Thundersoother</td>
+      <td>207334</td>
+      <td>74</td>
+      <td>Thundersoother</td>
+      <td>264064</td>
+      <td>75</td>
+      <td>Thundersoother</td>
+      <td>394989</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <td>Favonius Codex</td>
+      <td>Thundersoother</td>
+      <td>221613</td>
+      <td>79</td>
+      <td>Thundersoother</td>
+      <td>267011</td>
+      <td>76</td>
+      <td>Thundersoother</td>
+      <td>373628</td>
+      <td>72</td>
+    </tr>
+    <tr>
+      <td>The Widsith (EM)</td>
+      <td>Thundersoother</td>
+      <td>202529</td>
+      <td>72</td>
+      <td>Thundersoother</td>
+      <td>257944</td>
+      <td>74</td>
+      <td>Thundersoother</td>
+      <td>388086</td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <td>Frostbearer</td>
+      <td>Thundersoother</td>
+      <td>199764</td>
+      <td>71</td>
+      <td>Thundersoother</td>
+      <td>256798</td>
+      <td>73</td>
+      <td>Thundersoother</td>
+      <td>386335</td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <td>Royal Grimoire</td>
+      <td>Thundersoother</td>
+      <td>197482</td>
+      <td>70</td>
+      <td>Thundersoother</td>
+      <td>251512</td>
+      <td>72</td>
+      <td>Thundersoother</td>
+      <td>378408</td>
+      <td>72</td>
+    </tr>
+    <tr>
+      <td>Dodoco Tales</td>
+      <td>Thundersoother</td>
+      <td>193921</td>
+      <td>69</td>
+      <td>Thundersoother</td>
+      <td>246986</td>
+      <td>70</td>
+      <td>Thundersoother</td>
+      <td>371600</td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <td>Everlasting Moonglow</td>
+      <td>Thundersoother</td>
+      <td>188600</td>
+      <td>67</td>
+      <td>Thundersoother</td>
+      <td>243681</td>
+      <td>69</td>
+      <td>Thundersoother</td>
+      <td>366470</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <td>Mappa Mare</td>
+      <td>Thundersoother</td>
+      <td>187570</td>
+      <td>67</td>
+      <td>Thundersoother</td>
+      <td>236163</td>
+      <td>67</td>
+      <td>Thundersoother</td>
+      <td>350090</td>
+      <td>67</td>
+    </tr>
+    <tr>
+      <td>Sacrificial Fragments</td>
+      <td>Thundersoother</td>
+      <td>183763</td>
+      <td>65</td>
+      <td>Thundersoother</td>
+      <td>227438</td>
+      <td>65</td>
+      <td>Thundersoother</td>
+      <td>327939</td>
+      <td>63</td>
+    </tr>
+    <tr>
+      <td>Hakushin Ring</td>
+      <td>Thundersoother</td>
+      <td>175602</td>
+      <td>62</td>
+      <td>Thundersoother</td>
+      <td>223651</td>
+      <td>64</td>
+      <td>Thundersoother</td>
+      <td>334542</td>
+      <td>64</td>
+    </tr>
+    <tr>
+      <td>Thrilling Tales of Dragon Slayers</td>
+      <td>Thundersoother</td>
+      <td>177275</td>
+      <td>63</td>
+      <td>Thundersoother</td>
+      <td>217424</td>
+      <td>62</td>
+      <td>Thundersoother</td>
+      <td>331340</td>
+      <td>63</td>
+    </tr>
+    <tr>
+      <td>Prototype Amber</td>
+      <td>Thundersoother</td>
+      <td>165927</td>
+      <td>59</td>
+      <td>Thundersoother</td>
+      <td>211325</td>
+      <td>60</td>
+      <td>Thundersoother</td>
+      <td>317942</td>
+      <td>61</td>
+    </tr>
+  </tbody>
+</table>
+<p>When off-field</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>weapon1</th>
+      <th>artifact1</th>
+      <th>10s</th>
+      <th>%</th>
+      <th>artifact1</th>
+      <th>15s</th>
+      <th>%</th>
+      <th>artifact1</th>
+      <th>20s</th>
+      <th>%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Kagura's Verity</td>
+      <td>Thundersoother</td>
+      <td>268133</td>
+      <td>100</td>
+      <td>Thundersoother</td>
+      <td>278132</td>
+      <td>100</td>
+      <td>Thundersoother</td>
+      <td>278132</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <td>Skyward Atlas</td>
+      <td>Thundersoother</td>
+      <td>255198</td>
+      <td>95</td>
+      <td>Thundersoother</td>
+      <td>276181</td>
+      <td>99</td>
+      <td>Thundersoother</td>
+      <td>280453</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>Memory of Dust (R4)</td>
+      <td>Thundersoother</td>
+      <td>247892</td>
+      <td>92</td>
+      <td>Thundersoother</td>
+      <td>257548</td>
+      <td>93</td>
+      <td>Thundersoother</td>
+      <td>257548</td>
+      <td>92</td>
+    </tr>
+    <tr>
+      <td>Solar Pearl</td>
+      <td>Thundersoother</td>
+      <td>238903</td>
+      <td>89</td>
+      <td>Thundersoother</td>
+      <td>247340</td>
+      <td>89</td>
+      <td>Thundersoother</td>
+      <td>247340</td>
+      <td>88</td>
+    </tr>
+    <tr>
+      <td>Lost Prayer to the Sacred Winds</td>
+      <td>Thundersoother</td>
+      <td>235794</td>
+      <td>88</td>
+      <td>Thundersoother</td>
+      <td>245096</td>
+      <td>88</td>
+      <td>Thundersoother</td>
+      <td>245096</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <td>Memory of Dust</td>
+      <td>Thundersoother</td>
+      <td>234419</td>
+      <td>87</td>
+      <td>Thundersoother</td>
+      <td>243221</td>
+      <td>87</td>
+      <td>Thundersoother</td>
+      <td>243221</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <td>Blackcliff Agate</td>
+      <td>Thundersoother</td>
+      <td>216142</td>
+      <td>81</td>
+      <td>Thundersoother</td>
+      <td>223794</td>
+      <td>80</td>
+      <td>Thundersoother</td>
+      <td>223794</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <td>Eye of Perception</td>
+      <td>Thundersoother</td>
+      <td>202663</td>
+      <td>76</td>
+      <td>Thundersoother</td>
+      <td>209281</td>
+      <td>75</td>
+      <td>Thundersoother</td>
+      <td>217585</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <td>Wine and Song</td>
+      <td>Thundersoother</td>
+      <td>199864</td>
+      <td>75</td>
+      <td>Thundersoother</td>
+      <td>206940</td>
+      <td>74</td>
+      <td>Thundersoother</td>
+      <td>206940</td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <td>The Widsith (EM)</td>
+      <td>Thundersoother</td>
+      <td>195238</td>
+      <td>73</td>
+      <td>Thundersoother</td>
+      <td>202150</td>
+      <td>73</td>
+      <td>Thundersoother</td>
+      <td>202150</td>
+      <td>72</td>
+    </tr>
+    <tr>
+      <td>Frostbearer</td>
+      <td>Thundersoother</td>
+      <td>193139</td>
+      <td>72</td>
+      <td>Thundersoother</td>
+      <td>203117</td>
+      <td>73</td>
+      <td>Thundersoother</td>
+      <td>203117</td>
+      <td>72</td>
+    </tr>
+    <tr>
+      <td>Royal Grimoire</td>
+      <td>Thundersoother</td>
+      <td>190378</td>
+      <td>71</td>
+      <td>Thundersoother</td>
+      <td>197118</td>
+      <td>71</td>
+      <td>Thundersoother</td>
+      <td>197118</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <td>Dodoco Tales</td>
+      <td>Thundersoother</td>
+      <td>186932</td>
+      <td>70</td>
+      <td>Thundersoother</td>
+      <td>193550</td>
+      <td>70</td>
+      <td>Thundersoother</td>
+      <td>193550</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <td>Mappa Mare</td>
+      <td>Thundersoother</td>
+      <td>179614</td>
+      <td>67</td>
+      <td>Thundersoother</td>
+      <td>186151</td>
+      <td>67</td>
+      <td>Thundersoother</td>
+      <td>186151</td>
+      <td>66</td>
+    </tr>
+    <tr>
+      <td>Everlasting Moonglow</td>
+      <td>Thundersoother</td>
+      <td>176566</td>
+      <td>66</td>
+      <td>Thundersoother</td>
+      <td>182817</td>
+      <td>66</td>
+      <td>Thundersoother</td>
+      <td>182817</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <td>Sacrificial Fragments</td>
+      <td>Thundersoother</td>
+      <td>174201</td>
+      <td>65</td>
+      <td>Thundersoother</td>
+      <td>180500</td>
+      <td>65</td>
+      <td>Thundersoother</td>
+      <td>180500</td>
+      <td>64</td>
+    </tr>
+    <tr>
+      <td>Thrilling Tales of Dragon Slayers</td>
+      <td>Thundersoother</td>
+      <td>170890</td>
+      <td>64</td>
+      <td>Thundersoother</td>
+      <td>175898</td>
+      <td>63</td>
+      <td>Thundersoother</td>
+      <td>175898</td>
+      <td>63</td>
+    </tr>
+    <tr>
+      <td>Hakushin Ring</td>
+      <td>Thundersoother</td>
+      <td>169278</td>
+      <td>63</td>
+      <td>Thundersoother</td>
+      <td>175271</td>
+      <td>63</td>
+      <td>Thundersoother</td>
+      <td>175271</td>
+      <td>62</td>
+    </tr>
+    <tr>
+      <td>Favonius Codex</td>
+      <td>Thundersoother</td>
+      <td>159952</td>
+      <td>60</td>
+      <td>Thundersoother</td>
+      <td>165615</td>
+      <td>60</td>
+      <td>Thundersoother</td>
+      <td>165615</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <td>Prototype Amber</td>
+      <td>Thundersoother</td>
+      <td>159952</td>
+      <td>60</td>
+      <td>Thundersoother</td>
+      <td>165615</td>
+      <td>60</td>
+      <td>Thundersoother</td>
+      <td>165615</td>
+      <td>59</td>
+    </tr>
+  </tbody>
+</table>
+<h2 id="artifacts"><a class="header" href="#artifacts">Artifacts</a></h2>
+<p>When full energy is given</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>artifact1</th>
+      <th>weapon1</th>
+      <th>10s</th>
+      <th>%</th>
+      <th>weapon1</th>
+      <th>15s</th>
+      <th>%</th>
+      <th>weapon1</th>
+      <th>20s</th>
+      <th>%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Thundersoother</td>
+      <td>Kagura's Verity</td>
+      <td>330197</td>
+      <td>100</td>
+      <td>Kagura's Verity</td>
+      <td>370534</td>
+      <td>100</td>
+      <td>Kagura's Verity</td>
+      <td>399358</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>GFElem ATK 18 DMG 15</td>
+      <td>Kagura's Verity</td>
+      <td>326641</td>
+      <td>99</td>
+      <td>Kagura's Verity</td>
+      <td>365951</td>
+      <td>99</td>
+      <td>Kagura's Verity</td>
+      <td>393917</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <td>GFShimenawa ATK 36</td>
+      <td>Kagura's Verity</td>
+      <td>324025</td>
+      <td>98</td>
+      <td>Kagura's Verity</td>
+      <td>362819</td>
+      <td>98</td>
+      <td>Kagura's Verity</td>
+      <td>390305</td>
+      <td>98</td>
+    </tr>
+    <tr>
+      <td>Thundering Fury</td>
+      <td>Kagura's Verity</td>
+      <td>278370</td>
+      <td>84</td>
+      <td>Kagura's Verity</td>
+      <td>311698</td>
+      <td>84</td>
+      <td>Kagura's Verity</td>
+      <td>335311</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <td>GFElem ATK88 CR46 Em280 DMG15</td>
+      <td>Kagura's Verity</td>
+      <td>263760</td>
+      <td>80</td>
+      <td>Kagura's Verity</td>
+      <td>293660</td>
+      <td>79</td>
+      <td>Kagura's Verity</td>
+      <td>313913</td>
+      <td>79</td>
+    </tr>
+    <tr>
+      <td>GFElem ATK70 CR35 Em420 DMG15</td>
+      <td>Kagura's Verity</td>
+      <td>236656</td>
+      <td>72</td>
+      <td>Kagura's Verity</td>
+      <td>262779</td>
+      <td>71</td>
+      <td>Kagura's Verity</td>
+      <td>280059</td>
+      <td>70</td>
+    </tr>
+  </tbody>
+</table>
+<p>When 20 energies are given</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>artifact1</th>
+      <th>weapon1</th>
+      <th>10s</th>
+      <th>%</th>
+      <th>weapon1</th>
+      <th>20s</th>
+      <th>%</th>
+      <th>weapon1</th>
+      <th>30s</th>
+      <th>%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Thundersoother</td>
+      <td>Kagura's Verity</td>
+      <td>281732</td>
+      <td>100</td>
+      <td>Kagura's Verity</td>
+      <td>350893</td>
+      <td>100</td>
+      <td>Memory of Dust (R4)</td>
+      <td>522116</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>GFElem ATK 18 DMG 15</td>
+      <td>Kagura's Verity</td>
+      <td>280146</td>
+      <td>99</td>
+      <td>Kagura's Verity</td>
+      <td>347422</td>
+      <td>99</td>
+      <td>Kagura's Verity</td>
+      <td>504823</td>
+      <td>97</td>
+    </tr>
+    <tr>
+      <td>GFShimenawa ATK 36</td>
+      <td>Kagura's Verity</td>
+      <td>278804</td>
+      <td>99</td>
+      <td>Kagura's Verity</td>
+      <td>345084</td>
+      <td>98</td>
+      <td>Kagura's Verity</td>
+      <td>500098</td>
+      <td>96</td>
+    </tr>
+    <tr>
+      <td>Thundering Fury</td>
+      <td>Kagura's Verity</td>
+      <td>239517</td>
+      <td>85</td>
+      <td>Kagura's Verity</td>
+      <td>296458</td>
+      <td>84</td>
+      <td>Kagura's Verity</td>
+      <td>429634</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <td>GFElem ATK88 CR46 Em280 DMG15</td>
+      <td>Kagura's Verity</td>
+      <td>234381</td>
+      <td>83</td>
+      <td>Kagura's Verity</td>
+      <td>284534</td>
+      <td>81</td>
+      <td>Kagura's Verity</td>
+      <td>401390</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <td>GFElem ATK70 CR35 Em420 DMG15</td>
+      <td>Kagura's Verity</td>
+      <td>213420</td>
+      <td>76</td>
+      <td>Kagura's Verity</td>
+      <td>256823</td>
+      <td>73</td>
+      <td>Memory of Dust (R4)</td>
+      <td>361107</td>
+      <td>69</td>
+    </tr>
+  </tbody>
+</table>
+<p>When off-field</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>artifact1</th>
+      <th>weapon1</th>
+      <th>10s</th>
+      <th>%</th>
+      <th>weapon1</th>
+      <th>15s</th>
+      <th>%</th>
+      <th>weapon1</th>
+      <th>20s</th>
+      <th>%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Thundersoother</td>
+      <td>Kagura's Verity</td>
+      <td>268133</td>
+      <td>100</td>
+      <td>Kagura's Verity</td>
+      <td>278132</td>
+      <td>100</td>
+      <td>Skyward Atlas</td>
+      <td>280453</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>GFElem ATK 18 DMG 15</td>
+      <td>Kagura's Verity</td>
+      <td>266425</td>
+      <td>99</td>
+      <td>Kagura's Verity</td>
+      <td>276301</td>
+      <td>99</td>
+      <td>Kagura's Verity</td>
+      <td>276301</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <td>GFShimenawa ATK 36</td>
+      <td>Kagura's Verity</td>
+      <td>264842</td>
+      <td>99</td>
+      <td>Kagura's Verity</td>
+      <td>274706</td>
+      <td>99</td>
+      <td>Kagura's Verity</td>
+      <td>274706</td>
+      <td>98</td>
+    </tr>
+    <tr>
+      <td>Thundering Fury</td>
+      <td>Kagura's Verity</td>
+      <td>227526</td>
+      <td>85</td>
+      <td>Kagura's Verity</td>
+      <td>236000</td>
+      <td>85</td>
+      <td>Kagura's Verity</td>
+      <td>236000</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <td>GFElem ATK88 CR46 Em280 DMG15</td>
+      <td>Kagura's Verity</td>
+      <td>220152</td>
+      <td>82</td>
+      <td>Kagura's Verity</td>
+      <td>228736</td>
+      <td>82</td>
+      <td>Kagura's Verity</td>
+      <td>228736</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <td>GFElem ATK70 CR35 Em420 DMG15</td>
+      <td>Kagura's Verity</td>
+      <td>199449</td>
+      <td>74</td>
+      <td>Kagura's Verity</td>
+      <td>207384</td>
+      <td>75</td>
+      <td>Kagura's Verity</td>
+      <td>207384</td>
+      <td>74</td>
+    </tr>
+  </tbody>
+</table>
+<h2 id="supporters"><a class="header" href="#supporters">Supporters</a></h2>
+<p>When full energy is given</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>character</th>
+      <th>weapon</th>
+      <th>artifact</th>
+      <th>10s</th>
+      <th>%</th>
+      <th>character</th>
+      <th>weapon</th>
+      <th>artifact</th>
+      <th>20s</th>
+      <th>%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Yae Miko C2<br><br>Kazuha</td>
+      <td>Kagura's Verity<br><br>Freedom-Sworn</td>
+      <td>GFShimenawa ATK 36<br><br>Viridescent Venerer (EM)</td>
+      <td>584652</td>
+      <td>100</td>
+      <td>Yae Miko C2<br><br>Kazuha</td>
+      <td>Kagura's Verity<br><br>Freedom-Sworn</td>
+      <td>GFShimenawa ATK 36<br><br>Viridescent Venerer (EM)</td>
+      <td>683730</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>Yae Miko C2<br><br>Yae Miko 0112</td>
+      <td>Kagura's Verity<br><br>Kagura's Verity</td>
+      <td>Thundersoother<br><br>Thundersoother</td>
+      <td>531384</td>
+      <td>91</td>
+      <td>Yae Miko C2<br><br>Yae Miko 0112</td>
+      <td>Skyward Atlas<br><br>Skyward Atlas</td>
+      <td>Thundersoother<br><br>Thundersoother</td>
+      <td>616106</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <td>Yae Miko C2<br><br>Traveler Anemo</td>
+      <td>Kagura's Verity<br><br>Freedom-Sworn</td>
+      <td>GFElem ATK 18 DMG 15<br><br>Viridescent Venerer (EM)</td>
+      <td>514912</td>
+      <td>88</td>
+      <td>Yae Miko C2<br><br>Traveler Anemo</td>
+      <td>Kagura's Verity<br><br>Freedom-Sworn</td>
+      <td>GFElem ATK 18 DMG 15<br><br>Viridescent Venerer (EM)</td>
+      <td>602628</td>
+      <td>88</td>
+    </tr>
+    <tr>
+      <td>Yae Miko C2<br><br>Sangonomiya Kokomi</td>
+      <td>Kagura's Verity<br><br>Thrilling Tales of Dragon Slayers</td>
+      <td>GFElem ATK 18 DMG 15<br><br>Tenacity of the Millelith (HP)</td>
+      <td>494791</td>
+      <td>85</td>
+      <td>Yae Miko C2<br><br>Sangonomiya Kokomi</td>
+      <td>Kagura's Verity<br><br>Thrilling Tales of Dragon Slayers</td>
+      <td>GFElem ATK 18 DMG 15<br><br>Ocean-Hued Clam (7k heal)</td>
+      <td>583833</td>
+      <td>85</td>
+    </tr>
+    <tr>
+      <td>Yae Miko C2<br><br>Mona</td>
+      <td>Kagura's Verity<br><br>Skyward Atlas</td>
+      <td>GFShimenawa ATK 36<br><br>Noblesse Oblige</td>
+      <td>497186</td>
+      <td>85</td>
+      <td>Yae Miko C2<br><br>Mona</td>
+      <td>Kagura's Verity<br><br>Skyward Atlas</td>
+      <td>GFElem ATK 18 DMG 15<br><br>Noblesse Oblige</td>
+      <td>579196</td>
+      <td>85</td>
+    </tr>
+    <tr>
+      <td>Yae Miko C2<br><br>Raiden Shogun</td>
+      <td>Kagura's Verity<br><br>Wavebreaker's Fin</td>
+      <td>Thundersoother<br><br>Tenacity of the Millelith</td>
+      <td>463634</td>
+      <td>79</td>
+      <td>Yae Miko C2<br><br>Raiden Shogun</td>
+      <td>Skyward Atlas<br><br>Engulfing Lightning</td>
+      <td>Thundersoother<br><br>EoSF ATK70 CR47 ER77</td>
+      <td>577254</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <td>Yae Miko C2<br><br>Kujou Sara</td>
+      <td>Kagura's Verity<br><br>Skyward Harp</td>
+      <td>Thundersoother<br><br>Thundersoother</td>
+      <td>482248</td>
+      <td>82</td>
+      <td>Yae Miko C2<br><br>Kujou Sara</td>
+      <td>Kagura's Verity<br><br>Skyward Harp</td>
+      <td>Thundersoother<br><br>Thundersoother</td>
+      <td>551409</td>
+      <td>81</td>
+    </tr>
+    <tr>
+      <td>Yae Miko C2<br><br>Lisa</td>
+      <td>Kagura's Verity<br><br>Thrilling Tales of Dragon Slayers</td>
+      <td>Thundersoother<br><br>Thundersoother</td>
+      <td>463744</td>
+      <td>79</td>
+      <td>Yae Miko C2<br><br>Lisa</td>
+      <td>Skyward Atlas<br><br>Skyward Atlas</td>
+      <td>Thundersoother<br><br>Thundersoother</td>
+      <td>567674</td>
+      <td>83</td>
+    </tr>
+    <tr>
+      <td>Yae Miko C2<br><br>Sayu</td>
+      <td>Kagura's Verity<br><br>Song of Broken Pines</td>
+      <td>Thundersoother<br><br>Viridescent Venerer</td>
+      <td>464729</td>
+      <td>79</td>
+      <td>Yae Miko C2<br><br>Sayu</td>
+      <td>Kagura's Verity<br><br>Song of Broken Pines</td>
+      <td>Thundersoother<br><br>Viridescent Venerer</td>
+      <td>563740</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <td>Yae Miko C2<br><br>Albedo</td>
+      <td>Kagura's Verity<br><br>Freedom-Sworn</td>
+      <td>Thundersoother<br><br>Archaic Petra</td>
+      <td>447658</td>
+      <td>77</td>
+      <td>Yae Miko C2<br><br>Albedo</td>
+      <td>Kagura's Verity<br><br>Cinnabar Spindle</td>
+      <td>Thundersoother<br><br>Tenacity of the Millelith (DEF)</td>
+      <td>570452</td>
+      <td>83</td>
+    </tr>
+    <tr>
+      <td>Yae Miko C2<br><br>Ningguang</td>
+      <td>Kagura's Verity<br><br>Skyward Atlas</td>
+      <td>GFShimenawa ATK 36<br><br>Archaic Petra</td>
+      <td>457864</td>
+      <td>78</td>
+      <td>Yae Miko C2<br><br>Ningguang</td>
+      <td>Kagura's Verity<br><br>Skyward Atlas</td>
+      <td>GFShimenawa ATK 36<br><br>Archaic Petra</td>
+      <td>540081</td>
+      <td>79</td>
+    </tr>
+    <tr>
+      <td>Yae Miko C2<br><br>Ganyu</td>
+      <td>Kagura's Verity<br><br>Polar Star</td>
+      <td>GFElem ATK 18 DMG 15<br><br>Noblesse Oblige</td>
+      <td>431957</td>
+      <td>74</td>
+      <td>Yae Miko C2<br><br>Ganyu</td>
+      <td>Kagura's Verity<br><br>Mouun's Moon</td>
+      <td>GFElem ATK 18 DMG 15<br><br>Noblesse Oblige</td>
+      <td>539592</td>
+      <td>79</td>
+    </tr>
+    <tr>
+      <td>Yae Miko C2<br><br>Sucrose</td>
+      <td>Kagura's Verity<br><br>Skyward Atlas</td>
+      <td>GFElem ATK 18 DMG 15<br><br>Viridescent Venerer</td>
+      <td>438613</td>
+      <td>75</td>
+      <td>Yae Miko C2<br><br>Sucrose</td>
+      <td>Kagura's Verity<br><br>Skyward Atlas</td>
+      <td>GFElem ATK 18 DMG 15<br><br>Viridescent Venerer</td>
+      <td>524794</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <td>Yae Miko C2<br><br>Rosaria</td>
+      <td>Kagura's Verity<br><br>Wavebreaker's Fin</td>
+      <td>GFElem ATK 18 DMG 15<br><br>Noblesse Oblige</td>
+      <td>446844</td>
+      <td>76</td>
+      <td>Yae Miko C2<br><br>Rosaria</td>
+      <td>Kagura's Verity<br><br>Wavebreaker's Fin</td>
+      <td>GFElem ATK 18 DMG 15<br><br>Noblesse Oblige</td>
+      <td>515136</td>
+      <td>75</td>
+    </tr>
+    <tr>
+      <td>Yae Miko C2<br><br>Gorou C6</td>
+      <td>Kagura's Verity<br><br>Elegy for the End</td>
+      <td>GFShimenawa ATK 36<br><br>Archaic Petra</td>
+      <td>433059</td>
+      <td>74</td>
+      <td>Yae Miko C2<br><br>Gorou C6</td>
+      <td>Kagura's Verity<br><br>Elegy for the End</td>
+      <td>GFElem ATK 18 DMG 15<br><br>Archaic Petra</td>
+      <td>512792</td>
+      <td>75</td>
+    </tr>
+    <tr>
+      <td>Yae Miko C2<br><br>Arataki Itto</td>
+      <td>Kagura's Verity<br><br>Song of Broken Pines</td>
+      <td>GFElem ATK 18 DMG 15<br><br>Archaic Petra</td>
+      <td>433444</td>
+      <td>74</td>
+      <td>Yae Miko C2<br><br>Arataki Itto</td>
+      <td>Kagura's Verity<br><br>Song of Broken Pines</td>
+      <td>Thundersoother<br><br>Archaic Petra</td>
+      <td>504729</td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <td>Yae Miko C2<br><br>Fischl</td>
+      <td>Kagura's Verity<br><br>Elegy for the End</td>
+      <td>Thundersoother<br><br>Tenacity of the Millelith</td>
+      <td>413185</td>
+      <td>71</td>
+      <td>Yae Miko C2<br><br>Fischl</td>
+      <td>Kagura's Verity<br><br>Elegy for the End</td>
+      <td>Thundersoother<br><br>Tenacity of the Millelith</td>
+      <td>512364</td>
+      <td>75</td>
+    </tr>
+    <tr>
+      <td>Yae Miko C2<br><br>Xingqiu</td>
+      <td>Hakushin Ring<br><br>Mistsplitter Reforged</td>
+      <td>GFElem ATK 18 DMG 15<br><br>GFShimenawa ATK 36</td>
+      <td>391961</td>
+      <td>67</td>
+      <td>Yae Miko C2<br><br>Xingqiu</td>
+      <td>Hakushin Ring<br><br>Primordial Jade Cutter</td>
+      <td>GFElem ATK70 CR35 Em420 DMG15<br><br>GFElem ATK 18 DMG 15</td>
+      <td>523809</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <td>Yae Miko C2<br><br>Aloy</td>
+      <td>Kagura's Verity<br><br>Polar Star</td>
+      <td>GFElem ATK 18 DMG 15<br><br>Noblesse Oblige</td>
+      <td>422575</td>
+      <td>72</td>
+      <td>Yae Miko C2<br><br>Aloy</td>
+      <td>Kagura's Verity<br><br>Polar Star</td>
+      <td>GFElem ATK 18 DMG 15<br><br>Noblesse Oblige</td>
+      <td>490867</td>
+      <td>72</td>
+    </tr>
+    <tr>
+      <td>Yae Miko C2<br><br>Xiao</td>
+      <td>Kagura's Verity<br><br>Deathmatch</td>
+      <td>Thundersoother<br><br>Viridescent Venerer</td>
+      <td>421589</td>
+      <td>72</td>
+      <td>Yae Miko C2<br><br>Xiao</td>
+      <td>Kagura's Verity<br><br>Deathmatch</td>
+      <td>Thundersoother<br><br>Viridescent Venerer</td>
+      <td>490750</td>
+      <td>72</td>
+    </tr>
+  </tbody>
+</table>
+<h1 id="credit"><a class="header" href="#credit">Credit</a></h1>
+<ul>
+<li><a href="https://keqingmains.com">https://keqingmains.com</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Yae_Miko_0112.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="Shenhe.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Yae_Miko_0112.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="Shenhe.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

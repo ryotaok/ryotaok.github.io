@@ -1,8 +1,8 @@
 # Jean
 
-Jean is the **30th** position on average out of 46
+Jean is the **32th** position on average out of 50
 characters when full energy is given at the beginning, and is the
-**29th** position on average when 20 energy is given at the
+**30th** position on average when 20 energy is given at the
 beginning. See [Simulation Settings](./simulation_settings.md) for more
 information.
 
@@ -21,6 +21,10 @@ When 20 energies are given
 
 {{#include tables/Jean_weapon_e20.html}}
 
+When off-field
+
+{{#include tables/Jean_weapon_nonaca.html}}
+
 ## Artifacts
 
 When full energy is given
@@ -31,6 +35,10 @@ When 20 energies are given
 
 {{#include tables/Jean_artifact_e20.html}}
 
+When off-field
+
+{{#include tables/Jean_artifact_nonaca.html}}
+
 ## Supporters
 
 When full energy is given
@@ -40,4 +48,3 @@ When full energy is given
 # Credit
 
 - <https://keqingmains.com>
-- <https://genshin-impact.fandom.com>
